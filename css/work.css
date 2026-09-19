@@ -1,0 +1,277 @@
+.work-section,.lab-section,.journey-section,.philosophy-section,.contact-section{width:min(1400px,100%);margin:auto;padding:10rem clamp(22px,5vw,72px)}.work-list{margin-top:3rem}.work-item{position:relative;display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,.8fr) 40px;gap:clamp(2rem,5vw,5rem);align-items:center;padding:2rem 0;border-bottom:1px solid var(--border);text-decoration:none}.work-media{aspect-ratio:16/10;overflow:hidden;background:var(--charcoal);border:1px solid rgba(220,205,220,.07)}.work-art{width:100%;height:100%;background:radial-gradient(circle at 35% 35%,rgba(220,205,220,.16),transparent 22%),linear-gradient(135deg,rgba(183,167,217,.08),transparent 60%);transform:scale(1.04);transition:transform .7s var(--ease)}.work-art--two{background:radial-gradient(circle at 70% 40%,rgba(167,196,176,.1),transparent 24%),linear-gradient(45deg,rgba(183,167,217,.08),transparent 60%)}.work-art--three{background:radial-gradient(circle at 50% 50%,rgba(184,132,106,.1),transparent 18%),linear-gradient(120deg,rgba(220,205,220,.06),transparent 60%)}.work-item:hover .work-art{transform:scale(1.09)}.work-info .mono{color:var(--lavender)}.work-info h2{margin-top:.75rem;font:400 clamp(2rem,4vw,4rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.04em}.work-info p{max-width:500px;margin-top:1rem;color:var(--text-secondary);font-family:Georgia,"Times New Roman",serif}.work-arrow{color:var(--lavender);font-size:1.2rem}.journey-section{min-height:100svh}.journey-line{height:1px;background:var(--lavender);transform-origin:left center;margin:7rem 0 4rem;transform:scaleX(.2)}.journey-events{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}.journey-events article{border-top:1px solid var(--border);padding-top:1rem}.journey-events .mono{color:var(--lavender)}.journey-events strong{display:block;margin-top:2rem;font:400 clamp(1.5rem,2.6vw,2.7rem)/1 Georgia,serif}.journey-events p{margin-top:1rem;color:var(--text-secondary);font-family:Georgia,serif}.philosophy-section{min-height:100svh;display:grid;align-content:center}.philosophy-stack{display:flex;flex-direction:column;margin-top:6rem}.philosophy-stack span{font:400 clamp(4rem,10vw,10rem)/.8 Georgia,serif;letter-spacing:-.065em;color:var(--text-primary)}.philosophy-stack span:nth-child(2n){color:var(--lavender);margin-left:clamp(1rem,8vw,9rem)}.contact-section{min-height:100svh;display:grid;align-content:end}.contact-inner{padding:8rem 0}.contact-inner> .mono{color:var(--lavender)}.contact-inner h2{margin-top:1.5rem;font:400 clamp(3.5rem,8vw,8.5rem)/.88 Georgia,serif;letter-spacing:-.06em}.contact-inner h2 em{color:var(--lavender);font-style:normal}.contact-link{display:inline-block;margin-top:3rem;color:var(--text-primary);font:clamp(1.1rem,1.6vw,1.5rem)/1.2 Georgia,serif;text-decoration:none;border-bottom:1px solid rgba(183,167,217,.3);padding-bottom:.5rem}.contact-link span{color:var(--lavender)}footer{display:flex;justify-content:space-between;gap:1rem;padding:2rem 0;color:var(--text-muted);font:9px/1.4 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;border-top:1px solid var(--border)}@supports (animation-timeline:view()){.work-item .work-media{animation:workMedia linear both;animation-timeline:view(block);animation-range:entry 10% exit 85%}.work-item .work-info{animation:workInfo linear both;animation-timeline:view(block);animation-range:entry 10% exit 75%}.journey-line{animation:drawLine linear both;animation-timeline:view(block);animation-range:entry 20% exit 70%}.journey-events article{animation:journeyReveal linear both;animation-timeline:view(block);animation-range:entry 0% exit 60%}.philosophy-stack span{animation:philosophyReveal linear both;animation-timeline:view(block);animation-range:entry 0% exit 80%}.contact-inner{animation:contactReveal linear both;animation-timeline:view(block);animation-range:entry 0% exit 55%}}@keyframes workMedia{0%{transform:scale(.94);filter:blur(5px)}45%{transform:scale(1);filter:none}100%{transform:scale(.97);filter:blur(2px)}}@keyframes workInfo{0%{opacity:.35;transform:translateY(25px)}45%{opacity:1;transform:none}100%{opacity:.8;transform:translateY(-10px)}}@keyframes drawLine{to{transform:scaleX(1)}}@keyframes journeyReveal{0%{opacity:.25;transform:translateY(35px)}55%{opacity:1;transform:none}100%{opacity:.75;transform:translateY(-8px)}}@keyframes philosophyReveal{0%{opacity:.15;transform:translateY(70px)}55%{opacity:1;transform:none}100%{opacity:.7;transform:translateY(-15px)}}@keyframes contactReveal{0%{opacity:.2;transform:translateY(70px);filter:blur(7px)}55%{opacity:1;transform:none;filter:none}100%{opacity:.85}}
+
+.work-controls{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}.project-filter{padding:.65rem .85rem;border:1px solid var(--border);color:var(--text-muted);cursor:pointer;font:9px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;transition:color .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease)}.project-filter:hover,.project-filter:focus-visible,.project-filter.is-active{color:var(--text-primary);border-color:rgba(183,167,217,.42);background:rgba(183,167,217,.05)}.work-dynamic-meta{display:flex;justify-content:space-between;gap:1rem;margin-top:1.25rem;color:var(--text-muted)}.work-year{position:absolute;right:1rem;top:1rem;padding:.4rem .55rem;color:var(--text-primary);background:rgba(11,10,15,.72);border:1px solid rgba(220,205,220,.1)}.work-media{position:relative}.work-art--four{background:radial-gradient(circle at 28% 65%,rgba(167,196,176,.14),transparent 20%),linear-gradient(150deg,rgba(183,167,217,.09),transparent 62%)}.work-art--five{background:radial-gradient(circle at 62% 34%,rgba(183,167,217,.16),transparent 18%),linear-gradient(30deg,rgba(167,196,176,.07),transparent 60%)}.work-art--six{background:radial-gradient(circle at 44% 44%,rgba(184,132,106,.12),transparent 20%),linear-gradient(160deg,rgba(220,205,220,.07),transparent 65%)}
+
+.capabilities-section,.notes-section{width:min(1400px,100%);margin:auto;padding:10rem clamp(22px,5vw,72px)}.capabilities-section{min-height:100svh;display:grid;align-content:center}.capabilities-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--border);margin-top:4rem}.capabilities-grid article{min-height:260px;padding:2rem 2rem 2rem 0;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}.capabilities-grid article:nth-child(2n){padding-left:2rem;border-right:0}.capabilities-grid .mono{color:var(--lavender)}.capabilities-grid h2{margin-top:2.5rem;font:400 clamp(2.4rem,5vw,5rem)/.9 Georgia,serif;letter-spacing:-.05em}.capabilities-grid p{max-width:30rem;margin-top:1rem;color:var(--text-secondary);font:1rem/1.65 Georgia,serif}
+
+.notes-section{min-height:80svh}.notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:4rem;background:var(--border)}.notes-grid article{min-height:300px;padding:2rem;background:rgba(11,10,15,.76)}.notes-grid .mono{color:var(--lavender)}.notes-grid h3{margin-top:5rem;max-width:18rem;font:400 clamp(1.7rem,3vw,3rem)/1 Georgia,serif;letter-spacing:-.04em}.notes-grid p{max-width:24rem;margin-top:1.25rem;color:var(--text-secondary);font:1rem/1.65 Georgia,serif}
+
+.contact-copy{max-width:38rem;margin-top:1.5rem;color:var(--text-secondary);font:1.05rem/1.7 Georgia,serif}.contact-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:4rem;background:var(--border);max-width:1000px}.contact-card{min-height:150px;padding:1.25rem;display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:end;background:rgba(11,10,15,.8);text-decoration:none;transition:background .35s var(--ease),transform .35s var(--ease)}.contact-card:hover,.contact-card:focus-visible{background:rgba(183,167,217,.055);transform:translateY(-4px)}.contact-card__icon{align-self:start;color:var(--lavender);font-size:.8rem}.contact-card__body{display:flex;flex-direction:column;gap:.55rem}.contact-card__body strong{font:400 1.35rem/1 Georgia,serif}.contact-card__body small{color:var(--text-muted)}.contact-card__arrow{color:var(--lavender)}
+
+.scroll-codebar{position:fixed;z-index:30;top:0;left:0;right:0;height:3px;pointer-events:none}.scroll-codebar__track{position:relative;height:100%;background:rgba(220,205,220,.09)}.scroll-codebar__fill{position:absolute;inset:0 auto 0 0;width:calc(var(--scroll-progress,0) * 100%);background:var(--lavender);transform-origin:left center}.scroll-codebar__code{position:absolute;top:50%;left:calc(var(--scroll-progress,0) * 100%);transform:translate(-50%,-50%);display:grid;place-items:center;min-width:30px;height:18px;padding:0 .35rem;color:var(--text-primary);background:var(--void);border:1px solid rgba(183,167,217,.35);font-size:7px;letter-spacing:.02em;transition:left .12s linear}.scroll-codebar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(183,167,217,.12),transparent 20%,transparent 80%,rgba(183,167,217,.05));opacity:.65}
+@supports (animation-timeline:view()){
+  .capabilities-grid article{animation:sectionReveal linear both;animation-timeline:view(block);animation-range:entry 5% exit 45%}
+  .notes-grid article{animation:sectionReveal linear both;animation-timeline:view(block);animation-range:entry 0% exit 55%}
+  @keyframes sectionReveal{0%{opacity:.2;transform:translateY(35px)}55%{opacity:1;transform:none}100%{opacity:.82;transform:translateY(-8px)}}
+}
+
+/* PROJECT FIELD / EXPERIENCE CENTER */
+.work-heading{align-items:end}.work-counter{display:flex;gap:1.25rem;color:var(--text-muted);white-space:nowrap}.work-counter span:last-child{color:var(--lavender)}
+.work-controls{gap:.45rem;max-width:1000px}.project-filter{position:relative}.project-filter sup{margin-left:.45rem;color:var(--lavender);font-size:7px;vertical-align:top}
+.project-catalogue{margin-top:2rem;border-top:1px solid var(--border)}
+.project-row{position:relative;display:grid;grid-template-columns:44px 58px minmax(0,1fr) minmax(220px,.38fr);gap:1.5rem;align-items:center;padding:1.35rem 0;border-bottom:1px solid var(--border);text-decoration:none;transition:padding .45s var(--ease),background .45s var(--ease)}
+.project-row::before{content:"";position:absolute;inset:0 -1rem;background:rgba(183,167,217,.025);transform:scaleY(0);transform-origin:center;transition:transform .45s var(--ease)}
+.project-row:hover,.project-row:focus-visible{padding-left:1rem;padding-right:1rem}.project-row:hover::before,.project-row:focus-visible::before{transform:scaleY(1)}
+.project-row>*{position:relative;z-index:1}.project-row__index{color:var(--text-muted)}.project-row__icon{width:44px;height:44px;border:1px solid rgba(183,167,217,.22);display:grid;place-items:center;color:var(--lavender);font:14px/1 "IBM Plex Mono",monospace}.project-icon{font:inherit}.project-row__main>span{color:var(--lavender)}.project-row__main h3{margin-top:.42rem;font:400 clamp(1.5rem,2.5vw,2.35rem)/1 Georgia,serif;letter-spacing:-.035em}.project-row__main p{max-width:650px;margin-top:.45rem;color:var(--text-secondary);font:14px/1.55 Georgia,serif}.project-row__meta{display:flex;flex-direction:column;gap:1.2rem;align-items:flex-end;text-align:right}.project-row__meta span{color:var(--text-muted);line-height:1.5}.project-row__meta strong{font:10px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--text-primary)}
+.project-next{margin-top:8rem}.project-next__head{display:flex;justify-content:space-between;align-items:end;gap:2rem;border-bottom:1px solid var(--border);padding-bottom:1rem}.project-next__head span{color:var(--lavender)}.project-next__head p{color:var(--text-muted);font:13px/1.4 Georgia,serif}.project-strip{display:flex;gap:1px;margin-top:1px;background:var(--border);height:850px;overflow:hidden}.project-preview{position:relative;flex:1 1 0;min-width:0;background:rgba(11,10,15,.86);padding:1.5rem;overflow:hidden;transition:flex .65s var(--ease),background .45s var(--ease);display:flex;flex-direction:column;justify-content:space-between}.project-strip.has-hover .project-preview:not(.is-expanded){flex:.55}.project-preview.is-expanded{flex:2.35;background:rgba(183,167,217,.045)}.project-preview__icon{font:10px/1 "IBM Plex Mono",monospace;color:var(--lavender);width:42px;height:42px;border:1px solid rgba(183,167,217,.25);display:grid;place-items:center}.project-preview__body{min-width:240px}.project-preview__body>span{color:var(--lavender)}.project-preview h3{margin-top:1rem;font:400 clamp(1.6rem,3vw,3.2rem)/.95 Georgia,serif;letter-spacing:-.045em;white-space:nowrap}.project-preview p{max-width:390px;margin-top:1rem;color:var(--text-secondary);font:14px/1.55 Georgia,serif;opacity:.75;transition:opacity .35s}.project-preview:not(.is-expanded) p{opacity:.45}.project-preview dl{display:flex;gap:2rem;margin-top:1.5rem}.project-preview dt,.project-preview dd{font:8px/1.3 "IBM Plex Mono",monospace;letter-spacing:.1em}.project-preview dt{color:var(--text-muted)}.project-preview dd{margin-top:.35rem;color:var(--text-primary)}
+.scroll-codebar{top:10px;height:14px;z-index:60}.scroll-codebar__track{height:2px;margin-top:6px}.scroll-codebar__code{top:6px;height:22px;min-width:34px;box-shadow:0 0 0 5px var(--void)}
+
+.lab-experience{min-height:auto;padding-top:12rem}.lab-entry{min-height:95svh;display:flex;flex-direction:column;justify-content:center}.lab-console{margin-top:8rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1rem 0 0}.lab-console__rail{display:flex;justify-content:space-between;color:var(--lavender);padding:.5rem 0 1rem}.lab-experiment{display:grid;grid-template-columns:1.15fr .85fr;min-height:560px;border-top:1px solid var(--border)}.lab-experiment__visual{position:relative;overflow:hidden;border-right:1px solid var(--border);background:radial-gradient(circle at 50% 50%,rgba(183,167,217,.08),transparent 42%)}.lab-bars{position:absolute;inset:12% 9% 14%;display:flex;align-items:end;justify-content:center;gap:1.1%;}.lab-bars i{display:block;width:5%;height:var(--h);background:linear-gradient(to top,rgba(183,167,217,.18),rgba(183,167,217,.7));transform-origin:bottom;transition:height .6s var(--ease),transform .6s var(--ease)}.lab-experiment__visual[data-action="touch"] .lab-bars i:nth-child(3n){transform:translateY(-25px)}.lab-experiment__visual[data-action="understand"] .lab-bars i{height:calc(var(--h) * .72);}.lab-node-map{position:absolute;inset:14%;opacity:0;transition:opacity .5s}.lab-node-map.is-visible{opacity:1}.lab-node-map::before{content:"";position:absolute;inset:15%;background:repeating-linear-gradient(28deg,transparent 0 58px,rgba(183,167,217,.12) 59px 60px)}.lab-node-map span{position:absolute;width:18px;height:18px;border:1px solid var(--lavender);border-radius:50%;left:var(--x);top:var(--y);background:var(--void);box-shadow:0 0 0 6px rgba(183,167,217,.03)}.lab-node-map span:nth-child(1){--x:12%;--y:18%}.lab-node-map span:nth-child(2){--x:64%;--y:22%}.lab-node-map span:nth-child(3){--x:38%;--y:54%}.lab-node-map span:nth-child(4){--x:76%;--y:70%}.lab-node-map span:nth-child(5){--x:16%;--y:76%}.lab-experiment__copy{padding:clamp(2rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center}.lab-experiment__copy>span{color:var(--lavender)}.lab-experiment__copy h3{margin-top:1rem;font:400 clamp(2.8rem,5.4vw,6rem)/.9 Georgia,serif;letter-spacing:-.055em}.lab-experiment__copy>p{max-width:34rem;margin-top:1.5rem;color:var(--text-secondary);font:16px/1.65 Georgia,serif}.lab-actions{display:flex;gap:.5rem;margin-top:2rem}.lab-actions button{padding:.7rem .85rem;border:1px solid var(--border);background:transparent;color:var(--text-muted);font:9px/1 "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;cursor:pointer}.lab-actions button:hover,.lab-actions button.is-active{color:var(--text-primary);border-color:rgba(183,167,217,.45);background:rgba(183,167,217,.05)}.lab-insight{margin-top:3rem!important;color:var(--text-muted)!important}.lab-tabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border)}.lab-tabs button{padding:1rem;text-align:left;border:0;border-right:1px solid var(--border);background:transparent;color:var(--text-muted);font:9px/1 "IBM Plex Mono",monospace;letter-spacing:.1em;cursor:pointer}.lab-tabs button:last-child{border-right:0}.lab-tabs button.is-active,.lab-tabs button:hover{color:var(--text-primary);background:rgba(183,167,217,.035)}
+.custom-cursor{position:fixed;left:0;top:0;z-index:100;pointer-events:none;transform:translate3d(calc(var(--x, -100px) - 8px),calc(var(--y, -100px) - 8px),0);width:16px;height:16px;border:1px solid rgba(183,167,217,.7);display:grid;place-items:center;transition:width .2s var(--ease),height .2s var(--ease),border-color .2s var(--ease)}.custom-cursor::before,.custom-cursor::after{content:"";position:absolute;background:var(--lavender)}.custom-cursor::before{width:1px;height:26px}.custom-cursor::after{height:1px;width:26px}.custom-cursor span{width:3px;height:3px;border-radius:50%;background:var(--lavender)}.custom-cursor small{position:absolute;left:22px;top:1px;opacity:0;color:var(--lavender);font-size:7px;white-space:nowrap;transition:opacity .2s}.custom-cursor.is-active{width:22px;height:22px;border-color:var(--text-primary)}.custom-cursor.is-active small{opacity:1}
+.guide-robot{position:fixed;right:clamp(16px,3vw,40px);top:0;z-index:45;width:48px;height:48px;pointer-events:none;transition:filter .4s}.guide-robot__core{position:absolute;inset:10px;border:1px solid rgba(183,167,217,.55);background:rgba(11,10,15,.78);display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:8px}.guide-robot__core span{border:1px solid rgba(183,167,217,.45)}.guide-robot__antenna{position:absolute;width:1px;height:9px;background:var(--lavender);left:50%;top:0}.guide-robot__signal{position:absolute;inset:3px;border:1px solid rgba(183,167,217,.12);transform:rotate(45deg);transition:transform .6s var(--ease)}.guide-robot__label{position:absolute;right:54px;top:17px;color:var(--text-muted);font-size:7px;white-space:nowrap;opacity:.7}.guide-robot.is-lab .guide-robot__signal{transform:rotate(135deg) scale(1.25);border-color:rgba(183,167,217,.35)}
+@media (prefers-reduced-motion:reduce){.project-preview,.project-row,.lab-bars i,.custom-cursor,.guide-robot{transition:none!important}.guide-robot{transform:none!important}.custom-cursor{display:none}}
+
+/* V6 guide robot: full-body floating explorer */
+.guide-robot{position:fixed;left:50%;right:auto;top:0;z-index:65;width:76px;height:104px;pointer-events:none;will-change:transform;transform-origin:50% 50%;filter:drop-shadow(0 12px 24px rgba(0,0,0,.28))}.guide-robot__core{position:absolute;left:14px;top:25px;width:48px;height:45px;inset:auto;border:1px solid rgba(183,167,217,.62);background:rgba(11,10,15,.9);display:block;padding:0;clip-path:polygon(12% 0,88% 0,100% 16%,100% 84%,88% 100%,12% 100%,0 84%,0 16%)}.guide-robot__core:before{content:"";position:absolute;left:10px;right:10px;top:9px;height:13px;border:1px solid rgba(183,167,217,.55);background:rgba(183,167,217,.035)}.guide-robot__core:after{content:"";position:absolute;left:18px;top:13px;width:6px;height:6px;border:1px solid var(--lavender);box-shadow:12px 0 0 -1px var(--lavender)}.guide-robot__core span{position:absolute;width:8px;height:8px;border:1px solid rgba(183,167,217,.45);bottom:8px}.guide-robot__core span:first-child{left:10px}.guide-robot__core span:last-child{right:10px}.guide-robot__antenna{position:absolute;width:1px;height:18px;background:var(--lavender);left:50%;top:7px}.guide-robot__antenna:after{content:"";position:absolute;width:6px;height:6px;border:1px solid var(--lavender);border-radius:50%;left:-3px;top:-5px;background:var(--void)}.guide-robot__signal{position:absolute;left:30px;top:19px;width:16px;height:16px;border:1px solid rgba(183,167,217,.18);transform:rotate(45deg);transition:transform .6s var(--ease),border-color .6s}.guide-robot__label{position:absolute;left:50%;right:auto;top:77px;transform:translateX(-50%);color:var(--text-muted);font-size:7px;white-space:nowrap;opacity:.75}.guide-robot:before,.guide-robot:after{content:"";position:absolute;top:70px;width:12px;height:25px;border-left:1px solid rgba(183,167,217,.55);border-bottom:1px solid rgba(183,167,217,.55)}.guide-robot:before{left:17px;transform:skewY(12deg)}.guide-robot:after{right:17px;transform:scaleX(-1) skewY(12deg)}.guide-robot.is-lab .guide-robot__signal{transform:rotate(135deg) scale(1.25);border-color:rgba(183,167,217,.42)}
+
+/* Keep the scroll marker offset while preserving a live progress track. */
+.scroll-codebar{top:10px;height:14px;z-index:70}.scroll-codebar__track{height:2px;margin-top:6px}.scroll-codebar__fill{height:100%;width:calc(var(--scroll-progress,0) * 100%)}.scroll-codebar__code{top:6px;height:22px;min-width:34px;box-shadow:0 0 0 5px var(--void)}
+
+@media(max-width:600px){.guide-robot{left:auto;right:16px;width:60px;height:88px;transform-origin:50% 50%}.guide-robot__core{left:10px;top:22px;width:40px;height:38px}.guide-robot:before,.guide-robot:after{top:61px}.guide-robot__label{display:none}}
+@media (prefers-reduced-motion:reduce){.guide-robot{transition:none!important}}
+
+/* V7 guide robot: articulated full-body explorer roaming in a 2D viewport plane. */
+.guide-robot{position:fixed;left:0;top:0;width:104px;height:136px;z-index:65;pointer-events:none;will-change:transform;transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0);filter:drop-shadow(0 14px 26px rgba(0,0,0,.3));}
+.guide-robot__head,.guide-robot__body,.guide-robot__arm,.guide-robot__hand,.guide-robot__leg,.guide-robot__foot,.guide-robot__neck{position:absolute;border:1px solid rgba(183,167,217,.72);background:rgba(11,10,15,.94);box-sizing:border-box}
+.guide-robot__head{left:29px;top:18px;width:46px;height:35px;clip-path:polygon(12% 0,88% 0,100% 18%,100% 82%,88% 100%,12% 100%,0 82%,0 18%)}
+.guide-robot__eye{position:absolute;top:12px;width:7px;height:7px;border:1px solid var(--lavender);background:rgba(183,167,217,.12)}
+.guide-robot__eye:first-child{left:12px}.guide-robot__eye:last-child{right:12px}
+.guide-robot__neck{left:48px;top:52px;width:9px;height:8px;border-top:0}
+.guide-robot__body{left:23px;top:59px;width:58px;height:46px;clip-path:polygon(10% 0,90% 0,100% 12%,100% 88%,90% 100%,10% 100%,0 88%,0 12%)}
+.guide-robot__panel{position:absolute;left:12px;right:12px;top:10px;height:15px;border:1px solid rgba(183,167,217,.42)}
+.guide-robot__indicator{position:absolute;left:27px;top:15px;width:4px;height:4px;background:var(--lavender);box-shadow:10px 0 0 rgba(183,167,217,.55)}
+.guide-robot__arm{top:65px;width:9px;height:34px;border-radius:5px}
+.guide-robot__arm--left{left:12px;transform:rotate(12deg)}.guide-robot__arm--right{right:12px;transform:rotate(-12deg)}
+.guide-robot__hand{top:96px;width:9px;height:9px;border-radius:50%}.guide-robot__hand--left{left:10px}.guide-robot__hand--right{right:10px}
+.guide-robot__leg{top:104px;width:10px;height:23px;border-radius:0 0 5px 5px}.guide-robot__leg--left{left:33px}.guide-robot__leg--right{right:33px}
+.guide-robot__foot{top:123px;width:18px;height:6px;border-radius:4px}.guide-robot__foot--left{left:27px}.guide-robot__foot--right{right:27px}
+.guide-robot__antenna{position:absolute;left:51px;top:4px;width:1px;height:14px;background:var(--lavender)}
+.guide-robot__antenna:after{content:"";position:absolute;left:-3px;top:-5px;width:6px;height:6px;border:1px solid var(--lavender);border-radius:50%;background:var(--void)}
+.guide-robot__signal{position:absolute;left:42px;top:38px;width:20px;height:20px;border:1px solid rgba(183,167,217,.16);transform:rotate(45deg);transition:transform .6s var(--ease),border-color .6s}
+.guide-robot__label{position:absolute;left:52px;top:137px;transform:translateX(-50%);color:var(--text-muted);font-size:7px;white-space:nowrap;opacity:.8}
+.guide-robot.is-lab .guide-robot__signal{transform:rotate(135deg) scale(1.3);border-color:rgba(183,167,217,.45)}
+@media(max-width:600px){.guide-robot{width:82px;height:112px;transform:translate3d(calc(var(--rx,82vw) - 41px),calc(var(--ry,35vh) - 56px),0)}.guide-robot__head{left:23px;top:14px;width:36px;height:29px}.guide-robot__body{left:18px;top:50px;width:46px;height:39px}.guide-robot__neck{left:38px;top:43px}.guide-robot__eye{top:9px;width:5px;height:5px}.guide-robot__eye:first-child{left:9px}.guide-robot__eye:last-child{right:9px}.guide-robot__arm{top:55px;height:28px}.guide-robot__arm--left{left:9px}.guide-robot__arm--right{right:9px}.guide-robot__hand{top:81px}.guide-robot__hand--left{left:7px}.guide-robot__hand--right{right:7px}.guide-robot__leg{top:89px;height:19px}.guide-robot__leg--left{left:25px}.guide-robot__leg--right{right:25px}.guide-robot__foot{top:105px}.guide-robot__foot--left{left:20px}.guide-robot__foot--right{right:20px}.guide-robot__antenna{left:40px}.guide-robot__signal{left:31px;top:31px}.guide-robot__label{display:none}}
+@media(prefers-reduced-motion:reduce){.guide-robot{transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0);transition:none!important}}
+\n\n/* V8 robot sizing + readable physical states */\n.guide-robot{\n  --robot-scale:clamp(.58,8vw,.88);\n  width:104px;\n  height:136px;\n  transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale));\n  transform-origin:50% 50%;\n  transition:filter .45s var(--ease),opacity .35s var(--ease);\n}\n.guide-robot.is-idle{animation:robotIdle 3.8s ease-in-out infinite}\n.guide-robot.is-rest{animation:robotRest 2.8s ease-in-out infinite}\n.guide-robot.is-moving{animation:robotMove .9s ease-in-out infinite}\n.guide-robot.is-observing{animation:robotObserve 2.2s ease-in-out infinite}\n.guide-robot.is-moving .guide-robot__antenna:after{box-shadow:0 0 0 3px rgba(183,167,217,.08)}\n.guide-robot.is-rest .guide-robot__eye{opacity:.72}\n.guide-robot.is-rest .guide-robot__signal{opacity:.55}\n@keyframes robotIdle{0%,100%{margin-top:0;transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale)) rotate(-1deg)}50%{margin-top:-5px;transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale)) rotate(1deg)}}\n@keyframes robotRest{0%,100%{margin-top:0;transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale)) rotate(0deg)}50%{margin-top:-2px;transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale)) rotate(.5deg)}}\n@keyframes robotMove{0%,100%{margin-top:1px;transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale)) rotate(-2deg)}50%{margin-top:-2px;transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale)) rotate(2deg)}}\n@keyframes robotObserve{0%,100%{transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale)) rotate(-1deg)}50%{transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale)) rotate(1deg)}}\n\n@media(max-width:600px){\n  .guide-robot{--robot-scale:clamp(.48,13vw,.68);}\n}\n@media(prefers-reduced-motion:reduce){\n  .guide-robot,.guide-robot.is-idle,.guide-robot.is-rest,.guide-robot.is-moving,.guide-robot.is-observing{animation:none!important;transform:translate3d(calc(var(--rx,78vw) - 52px),calc(var(--ry,32vh) - 68px),0) scale(var(--robot-scale))!important}\n}\n\n/* Phone contact card */\n.contact-card--phone{cursor:default}\n.contact-card--phone .contact-card__icon{font-size:1rem}\n.contact-card--phone:hover,.contact-card--phone:focus-visible{transform:none;background:rgba(11,10,15,.8)}\n@media(max-width:900px){.contact-links{grid-template-columns:repeat(3,minmax(0,1fr))}}\n@media(max-width:620px){.contact-links{grid-template-columns:1fr}}\n
+/* V9 robot: smaller footprint, articulated pose language, and a final beacon ritual. */
+.guide-robot{
+  --robot-scale:clamp(.42,5.2vw,.68);
+}
+.guide-robot.is-idle .guide-robot__arm--left{transform:rotate(24deg);transform-origin:50% 5%}
+.guide-robot.is-idle .guide-robot__arm--right{transform:rotate(-8deg);transform-origin:50% 5%}
+.guide-robot.is-idle .guide-robot__hand--left{transform:translate(-2px,1px)}
+.guide-robot.is-idle .guide-robot__hand--right{transform:translate(1px,1px)}
+.guide-robot.is-rest .guide-robot__arm--left{transform:rotate(2deg);transform-origin:50% 5%}
+.guide-robot.is-rest .guide-robot__arm--right{transform:rotate(-2deg);transform-origin:50% 5%}
+.guide-robot.is-rest .guide-robot__hand--left{transform:translate(0,3px)}
+.guide-robot.is-rest .guide-robot__hand--right{transform:translate(0,3px)}
+.guide-robot.is-moving .guide-robot__arm--left{transform:rotate(-30deg);transform-origin:50% 5%}
+.guide-robot.is-moving .guide-robot__arm--right{transform:rotate(28deg);transform-origin:50% 5%}
+.guide-robot.is-moving .guide-robot__leg--left{transform:rotate(10deg);transform-origin:50% 0}
+.guide-robot.is-moving .guide-robot__leg--right{transform:rotate(-12deg);transform-origin:50% 0}
+.guide-robot.is-observing .guide-robot__arm--left{transform:rotate(-52deg);transform-origin:50% 5%}
+.guide-robot.is-observing .guide-robot__arm--right{transform:rotate(10deg);transform-origin:50% 5%}
+.guide-robot.is-observing .guide-robot__hand--left{transform:translate(-10px,-6px)}
+.guide-robot.is-observing .guide-robot__signal{transform:rotate(45deg) scale(1.15)}
+.guide-robot.is-celebrate .guide-robot__arm--left{transform:rotate(-68deg);transform-origin:50% 5%}
+.guide-robot.is-celebrate .guide-robot__arm--right{transform:rotate(68deg);transform-origin:50% 5%}
+.guide-robot.is-celebrate .guide-robot__hand--left{transform:translate(-9px,-10px)}
+.guide-robot.is-celebrate .guide-robot__hand--right{transform:translate(9px,-10px)}
+.guide-robot.is-celebrate .guide-robot__eye{box-shadow:0 0 10px rgba(183,167,217,.55)}
+.guide-robot.is-celebrate .guide-robot__signal{animation:robotBeacon 1.7s ease-out infinite;transform:rotate(45deg) scale(1.35);border-color:rgba(183,167,217,.7)}
+.guide-robot.is-celebrate .guide-robot__indicator{box-shadow:10px 0 0 rgba(183,167,217,.75),20px 0 0 rgba(183,167,217,.28)}
+.guide-robot.is-celebrate:after{content:'SIGNAL SENT';position:absolute;left:52px;top:-25px;transform:translateX(-50%);font:7px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--lavender);white-space:nowrap;animation:signalText 1.7s ease-in-out infinite}
+@keyframes robotBeacon{0%{box-shadow:0 0 0 0 rgba(183,167,217,.35);opacity:.65}65%{box-shadow:0 0 0 24px rgba(183,167,217,0);opacity:1}100%{box-shadow:0 0 0 30px rgba(183,167,217,0);opacity:.65}}
+@keyframes signalText{0%,100%{opacity:.45;transform:translateX(-50%) translateY(3px)}50%{opacity:1;transform:translateX(-50%) translateY(0)}}
+@media(max-width:600px){.guide-robot{--robot-scale:clamp(.36,9vw,.54)}}
+@media(prefers-reduced-motion:reduce){.guide-robot.is-celebrate .guide-robot__signal,.guide-robot.is-celebrate:after{animation:none!important}}
+
+/* V10: compact robot presence + playful interaction */
+.guide-robot{
+  --robot-scale:clamp(.30,3.4vw,.48);
+  pointer-events:auto;
+  cursor:default;
+}
+.guide-robot.is-hovered{
+  filter:drop-shadow(0 10px 20px rgba(0,0,0,.25));
+}
+.guide-robot.is-hovered .guide-robot__head{transform:rotate(-4deg) translateY(-2px)}
+.guide-robot.is-hovered .guide-robot__eye{transform:scale(1.18)}
+.guide-robot.is-hovered .guide-robot__arm--right{animation:robotWave .65s ease-in-out infinite alternate;transform-origin:50% 5%}
+.guide-robot.is-hovered .guide-robot__signal{transform:rotate(45deg) scale(1.2);border-color:rgba(183,167,217,.55)}
+.guide-robot.is-hovered:after{content:'oh, hi ♡';position:absolute;left:52px;top:-20px;transform:translateX(-50%);font:7px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--lavender);white-space:nowrap;opacity:.9;animation:helloBob 1.4s ease-in-out infinite}
+@keyframes robotWave{from{transform:rotate(18deg)}to{transform:rotate(52deg)}}
+@keyframes helloBob{0%,100%{opacity:.45;transform:translate(-50%,2px)}50%{opacity:1;transform:translate(-50%,0)}}
+
+/* Replace the end-state beacon copy with a softer farewell. */
+.guide-robot.is-celebrate:after{
+  content:'thanks for exploring ♡';
+  left:52px;
+  top:-27px;
+  letter-spacing:.08em;
+}
+.guide-robot.is-celebrate .guide-robot__arm--left{animation:farewellWaveLeft .9s ease-in-out infinite alternate}
+.guide-robot.is-celebrate .guide-robot__arm--right{animation:farewellWaveRight .9s ease-in-out infinite alternate}
+@keyframes farewellWaveLeft{from{transform:rotate(-62deg)}to{transform:rotate(-78deg)}}
+@keyframes farewellWaveRight{from{transform:rotate(62deg)}to{transform:rotate(78deg)}}
+
+@media(max-width:600px){
+  .guide-robot{--robot-scale:clamp(.27,7vw,.40)}
+}
+@media(prefers-reduced-motion:reduce){
+  .guide-robot.is-hovered .guide-robot__arm--right,.guide-robot.is-celebrate .guide-robot__arm--left,.guide-robot.is-celebrate .guide-robot__arm--right,.guide-robot.is-hovered:after,.guide-robot.is-celebrate:after{animation:none!important}
+}
+.guide-robot__eye{transition:transform .18s ease}
+.guide-robot__eye:first-child{transform:translate(calc(var(--look-x,0) * 2px),calc(var(--look-y,0) * 2px))}
+.guide-robot__eye:last-child{transform:translate(calc(var(--look-x,0) * 2px),calc(var(--look-y,0) * 2px))}
+
+/* Launch checklist: mobile CTA */
+.mobile-sticky-cta{display:none}
+@media(max-width:900px){.mobile-sticky-cta{position:fixed;left:14px;right:14px;bottom:14px;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:.85rem 1rem;background:rgba(11,10,15,.94);border:1px solid rgba(183,167,217,.35);color:var(--text-primary);text-decoration:none;font:500 .68rem/1 "IBM Plex Mono","SFMono-Regular",monospace;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 32px rgba(0,0,0,.25);backdrop-filter:blur(10px)}.mobile-sticky-cta:hover,.mobile-sticky-cta:focus-visible{background:rgba(183,167,217,.08);color:var(--lavender)}}
+@media(prefers-reduced-motion:reduce){.hero-cta{transition:none}.mobile-sticky-cta{transition:none}}
+
+/* V13 robot structure: compact, friendly two-part body inspired by the approved reference.
+   Movement logic remains in js/experience.js; this block only changes the visual anatomy. */
+.guide-robot{
+  width:112px;
+  height:124px;
+  filter:drop-shadow(0 10px 18px rgba(0,0,0,.22));
+}
+.guide-robot__antenna,
+.guide-robot__neck,
+.guide-robot__hand,
+.guide-robot__leg,
+.guide-robot__foot,
+.guide-robot__signal,
+.guide-robot__label{display:none!important}
+.guide-robot__head{
+  left:24px;
+  top:16px;
+  width:64px;
+  height:46px;
+  border:2px solid rgba(220,213,226,.72);
+  border-radius:17px;
+  background:rgba(18,16,24,.96);
+  clip-path:none;
+  box-shadow:inset 0 0 0 1px rgba(183,167,217,.08);
+  transition:transform .24s var(--ease);
+}
+.guide-robot__eye{
+  top:20px;
+  width:8px;
+  height:8px;
+  border:0;
+  border-radius:50%;
+  background:var(--lavender);
+  box-shadow:0 0 8px rgba(183,167,217,.18);
+  transition:transform .18s ease,opacity .2s ease;
+}
+.guide-robot__eye:first-child{left:18px}
+.guide-robot__eye:last-child{right:18px}
+.guide-robot__body{
+  left:36px;
+  top:66px;
+  width:40px;
+  height:44px;
+  border:2px solid rgba(183,167,217,.58);
+  border-radius:11px;
+  background:rgba(18,16,24,.96);
+  clip-path:none;
+  box-shadow:inset 0 0 0 1px rgba(183,167,217,.06);
+}
+.guide-robot__panel{display:none}
+.guide-robot__indicator{
+  left:14px;
+  top:13px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--lavender);
+  box-shadow:none;
+}
+.guide-robot__arm{
+  top:69px;
+  width:8px;
+  height:30px;
+  border:0;
+  border-radius:6px;
+  background:rgba(220,213,226,.72);
+  transform-origin:50% 8%;
+  transition:transform .3s var(--ease);
+}
+.guide-robot__arm--left{left:23px;transform:rotate(18deg)}
+.guide-robot__arm--right{right:23px;transform:rotate(-18deg)}
+
+/* Preserve the existing pose/state choreography, translated onto the simpler body. */
+.guide-robot.is-idle .guide-robot__arm--left{transform:rotate(24deg)}
+.guide-robot.is-idle .guide-robot__arm--right{transform:rotate(-8deg)}
+.guide-robot.is-rest .guide-robot__arm--left{transform:rotate(2deg)}
+.guide-robot.is-rest .guide-robot__arm--right{transform:rotate(-2deg)}
+.guide-robot.is-moving .guide-robot__arm--left{transform:rotate(-30deg)}
+.guide-robot.is-moving .guide-robot__arm--right{transform:rotate(28deg)}
+.guide-robot.is-observing .guide-robot__arm--left{transform:rotate(-52deg)}
+.guide-robot.is-observing .guide-robot__arm--right{transform:rotate(10deg)}
+.guide-robot.is-celebrate .guide-robot__arm--left{transform:rotate(-68deg)}
+.guide-robot.is-celebrate .guide-robot__arm--right{transform:rotate(68deg)}
+.guide-robot.is-hovered .guide-robot__head{transform:rotate(-4deg) translateY(-2px)}
+.guide-robot.is-hovered .guide-robot__eye{transform:scale(1.18)}
+.guide-robot.is-hovered .guide-robot__arm--right{animation:robotWaveSimple .65s ease-in-out infinite alternate}
+.guide-robot.is-celebrate .guide-robot__arm--left{animation:farewellWaveSimpleLeft .9s ease-in-out infinite alternate}
+.guide-robot.is-celebrate .guide-robot__arm--right{animation:farewellWaveSimpleRight .9s ease-in-out infinite alternate}
+.guide-robot.is-celebrate .guide-robot__eye{box-shadow:0 0 10px rgba(183,167,217,.55)}
+.guide-robot.is-celebrate .guide-robot__indicator{box-shadow:0 0 10px rgba(183,167,217,.55)}
+.guide-robot.is-hovered:after{
+  content:'oh, hi ♥️';
+  position:absolute;
+  left:56px;
+  top:-3px;
+  transform:translate(-50%,-100%);
+  font:7px/1 "IBM Plex Mono",monospace;
+  letter-spacing:.08em;
+  color:var(--lavender);
+  white-space:nowrap;
+  opacity:.9;
+  animation:helloBobSimple 1.4s ease-in-out infinite;
+}
+.guide-robot.is-celebrate:after{
+  content:'thanks for exploring 💖';
+  left:56px;
+  top:5px;
+  transform:translate(-50%,-100%);
+  font:7px/1 "IBM Plex Mono",monospace;
+  letter-spacing:.08em;
+  color:var(--lavender);
+  white-space:nowrap;
+  animation:helloBobSimple 1.4s ease-in-out infinite;
+}
+@keyframes robotWaveSimple{from{transform:rotate(18deg)}to{transform:rotate(52deg)}}
+@keyframes farewellWaveSimpleLeft{from{transform:rotate(-62deg)}to{transform:rotate(-78deg)}}
+@keyframes farewellWaveSimpleRight{from{transform:rotate(62deg)}to{transform:rotate(78deg)}}
+@keyframes helloBobSimple{0%,100%{opacity:.45;transform:translate(-50%,calc(-100% + 2px))}50%{opacity:1;transform:translate(-50%,-100%)}}
+@media(max-width:600px){
+  .guide-robot{width:88px;height:102px}
+  .guide-robot__head{left:19px;top:13px;width:50px;height:36px;border-radius:13px}
+  .guide-robot__eye{top:15px;width:6px;height:6px}
+  .guide-robot__eye:first-child{left:14px}.guide-robot__eye:last-child{right:14px}
+  .guide-robot__body{left:28px;top:52px;width:32px;height:36px;border-radius:9px}
+  .guide-robot__indicator{left:11px;top:11px;width:6px;height:6px}
+  .guide-robot__arm{top:54px;width:7px;height:24px}
+  .guide-robot__arm--left{left:18px}.guide-robot__arm--right{right:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .guide-robot.is-hovered .guide-robot__arm--right,
+  .guide-robot.is-celebrate .guide-robot__arm--left,
+  .guide-robot.is-celebrate .guide-robot__arm--right,
+  .guide-robot.is-hovered:after,
+  .guide-robot.is-celebrate:after{animation:none!important}
+}
