@@ -1,600 +1,93 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Privacy | Shashwat Aneja</title>
-
-  <meta
-    name="description"
-    content="Privacy information for Shashwat Aneja's personal developer portfolio."
-  >
-  <meta name="author" content="Shashwat Aneja">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#0B0A0F">
-  <meta name="color-scheme" content="dark light">
-
-  <link rel="canonical" href="https://shashwataneja.com/privacy.html">
-
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" sizes="180x180">
-  <link rel="manifest" href="/assets/icons/site.webmanifest">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Shashwat Aneja">
-  <meta property="og:title" content="Privacy | Shashwat Aneja">
-  <meta
-    property="og:description"
-    content="Privacy information for Shashwat Aneja's personal developer portfolio."
-  >
-  <meta property="og:url" content="https://shashwataneja.com/privacy.html">
-  <meta
-    property="og:image"
-    content="https://shashwataneja.com/assets/og/shashwat-aneja-portfolio.png"
-  >
-  <meta property="og:image:alt" content="Shashwat Aneja portfolio">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Privacy | Shashwat Aneja">
-  <meta
-    name="twitter:description"
-    content="Privacy information for Shashwat Aneja's personal developer portfolio."
-  >
-  <meta
-    name="twitter:image"
-    content="https://shashwataneja.com/assets/og/shashwat-aneja-portfolio.png"
-  >
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://shashwataneja.com/privacy.html#webpage",
-    "url": "https://shashwataneja.com/privacy.html",
-    "name": "Privacy | Shashwat Aneja",
-    "description": "Privacy information for Shashwat Aneja's personal developer portfolio.",
-    "isPartOf": {
-      "@id": "https://shashwataneja.com/#website"
-    }
-  }
-  </script>
-
-  <link rel="stylesheet" href="/css/field.css">
-
-  <style>
-    /* =========================================================
-       LEGAL PAGE LAYER
-       ========================================================= */
-
-    .legal-page {
-      min-height: 100svh;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .legal-shell {
-      width: min(100% - 44px, 1180px);
-      margin: 0 auto;
-      padding: clamp(120px, 15vh, 190px) 0 100px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .legal-header {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 260px;
-      gap: clamp(35px, 7vw, 110px);
-      align-items: end;
-      padding-bottom: 70px;
-      border-bottom: 1px solid var(--field-line);
-    }
-
-    .legal-kicker {
-      margin: 0 0 22px;
-      color: var(--lavender);
-      font: 9px/1.4 "IBM Plex Mono", monospace;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .legal-title {
-      margin: 0;
-      max-width: 850px;
-      color: var(--text-primary);
-      font: 400 clamp(70px, 11vw, 155px)/.82 Georgia, "Times New Roman", serif;
-      letter-spacing: -.065em;
-    }
-
-    .legal-intro {
-      margin: 0;
-      color: var(--text-secondary);
-      font-size: 15px;
-      line-height: 1.7;
-      max-width: 330px;
-    }
-
-    .legal-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
-      color: var(--text-muted);
-      font: 8px/1.4 "IBM Plex Mono", monospace;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .legal-content {
-      display: grid;
-      grid-template-columns: 180px minmax(0, 760px);
-      gap: clamp(35px, 8vw, 110px);
-      padding-top: 75px;
-    }
-
-    .legal-index {
-      position: sticky;
-      top: 100px;
-      align-self: start;
-    }
-
-    .legal-index-label {
-      margin-bottom: 18px;
-      color: var(--text-muted);
-      font: 8px/1.4 "IBM Plex Mono", monospace;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .legal-index a {
-      display: block;
-      width: fit-content;
-      margin: 0 0 10px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font: 8px/1.5 "IBM Plex Mono", monospace;
-      letter-spacing: .08em;
-      transition: color .2s ease, transform .2s ease;
-    }
-
-    .legal-index a:hover,
-    .legal-index a:focus-visible {
-      color: var(--lavender);
-      transform: translateX(4px);
-      outline: none;
-    }
-
-    .legal-section {
-      padding: 0 0 55px;
-      margin: 0 0 55px;
-      border-bottom: 1px solid var(--field-line);
-    }
-
-    .legal-section:last-child {
-      margin-bottom: 0;
-    }
-
-    .legal-section__number {
-      display: block;
-      margin-bottom: 12px;
-      color: var(--lavender);
-      font: 8px/1 "IBM Plex Mono", monospace;
-      letter-spacing: .16em;
-    }
-
-    .legal-section h2 {
-      margin: 0 0 18px;
-      color: var(--text-primary);
-      font: 400 clamp(30px, 4vw, 48px)/1 Georgia, "Times New Roman", serif;
-      letter-spacing: -.035em;
-    }
-
-    .legal-section p,
-    .legal-section li {
-      color: var(--text-secondary);
-      font-size: 15px;
-      line-height: 1.85;
-    }
-
-    .legal-section p {
-      margin: 0 0 16px;
-    }
-
-    .legal-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .legal-section ul {
-      padding-left: 20px;
-      margin: 12px 0 0;
-    }
-
-    .legal-section li {
-      padding-left: 6px;
-      margin-bottom: 9px;
-    }
-
-    .legal-section strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    .legal-link {
-      color: var(--text-primary);
-      text-decoration: none;
-      border-bottom: 1px solid var(--line-strong);
-      padding-bottom: 2px;
-      transition: color .2s ease, border-color .2s ease;
-    }
-
-    .legal-link:hover,
-    .legal-link:focus-visible {
-      color: var(--lavender);
-      border-color: var(--lavender);
-      outline: none;
-    }
-
-    .legal-note {
-      padding: 20px;
-      margin-top: 24px;
-      border: 1px solid var(--field-line);
-      background: color-mix(in srgb, var(--card) 75%, transparent);
-    }
-
-    .legal-note p {
-      margin: 0;
-      font-size: 13px;
-    }
-
-    .legal-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-      padding-top: 55px;
-      color: var(--text-muted);
-      font: 8px/1.5 "IBM Plex Mono", monospace;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .legal-footer__links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .legal-footer a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color .2s ease;
-    }
-
-    .legal-footer a:hover,
-    .legal-footer a:focus-visible {
-      color: var(--lavender);
-      outline: none;
-    }
-
-    .legal-background-mark {
-      position: fixed;
-      right: -5vw;
-      top: 18vh;
-      z-index: 0;
-      color: color-mix(in srgb, var(--lavender) 5%, transparent);
-      font: 400 35vw/.8 Georgia, serif;
-      letter-spacing: -.08em;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    @media (max-width: 800px) {
-      .legal-header {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .legal-content {
-        grid-template-columns: 1fr;
-        padding-top: 50px;
-      }
-
-      .legal-index {
-        position: static;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px 18px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid var(--field-line);
-      }
-
-      .legal-index-label {
-        width: 100%;
-        margin-bottom: 4px;
-      }
-
-      .legal-index a {
-        margin: 0;
-      }
-
-      .legal-footer {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .legal-shell {
-        width: min(100% - 28px, 1180px);
-        padding-top: 110px;
-      }
-
-      .legal-title {
-        font-size: clamp(62px, 19vw, 100px);
-      }
-
-      .legal-section p,
-      .legal-section li {
-        font-size: 14px;
-      }
-
-      .legal-meta {
-        flex-direction: column;
-        gap: 7px;
-      }
-
-      .legal-footer__links {
-        flex-wrap: wrap;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .legal-index a,
-      .legal-link {
-        transition: none;
-      }
-    }
-  </style>
-</head>
-
-<body class="legal-page">
-
-  <div class="legal-background-mark" aria-hidden="true">P</div>
-
-  <!-- Resident robot -->
-  <div
-    class="guide-robot"
-    data-guide-robot
-    data-cursor="drag"
-    role="img"
-    aria-label="Guide robot. Drag me if I get in your way. Use the arrow keys when focused."
-    tabindex="0"
-  >
-    <div class="guide-robot__antenna"></div>
-
-    <div class="guide-robot__head">
-      <span class="guide-robot__eye"></span>
-      <span class="guide-robot__eye"></span>
-    </div>
-
-    <div class="guide-robot__neck"></div>
-
-    <div class="guide-robot__body">
-      <span class="guide-robot__panel"></span>
-      <span class="guide-robot__indicator"></span>
-    </div>
-
-    <div class="guide-robot__arm guide-robot__arm--left"></div>
-    <div class="guide-robot__arm guide-robot__arm--right"></div>
-
-    <div class="guide-robot__hand guide-robot__hand--left"></div>
-    <div class="guide-robot__hand guide-robot__hand--right"></div>
-
-    <div class="guide-robot__leg guide-robot__leg--left"></div>
-    <div class="guide-robot__leg guide-robot__leg--right"></div>
-
-    <div class="guide-robot__foot guide-robot__foot--left"></div>
-    <div class="guide-robot__foot guide-robot__foot--right"></div>
-
-    <div class="guide-robot__signal"></div>
-    <span class="guide-robot__label mono" data-guide-label>PRIVACY</span>
-  </div>
-
-  <!-- Custom cursor -->
-  <div class="field-cursor" data-cursor aria-hidden="true">
-    <small></small>
-  </div>
-
-  <main class="legal-shell">
-
-    <header class="legal-header">
-      <div>
-        <p class="legal-kicker">SITE / PRIVACY</p>
-        <h1 class="legal-title">Privacy.</h1>
-      </div>
-
-      <p class="legal-intro">
-        A straightforward explanation of what this portfolio does,
-        does not, and may store while you explore it.
-      </p>
-    </header>
-
-    <div class="legal-meta">
-      <span>PERSONAL PORTFOLIO</span>
-      <span>LAST REVIEWED / 2026</span>
-    </div>
-
-    <div class="legal-content">
-
-      <nav class="legal-index" aria-label="Privacy sections">
-        <span class="legal-index-label">INDEX</span>
-        <a href="#overview">Overview</a>
-        <a href="#information">Information</a>
-        <a href="#storage">Local Storage</a>
-        <a href="#workspace">Workspace</a>
-        <a href="#external">External Services</a>
-        <a href="#retention">Retention</a>
-        <a href="#changes">Changes</a>
-      </nav>
-
-      <article>
-
-        <section class="legal-section" id="overview">
-          <span class="legal-section__number">01 / OVERVIEW</span>
-          <h2>A personal website, not a tracking platform.</h2>
-
-          <p>
-            This website is the personal developer portfolio of
-            <strong>Shashwat Aneja</strong>. It exists to present software,
-            games, experiments, interactive studies, writing and other
-            personal work.
-          </p>
-
-          <p>
-            The website is not operated as an advertising platform and does
-            not intentionally build advertising profiles from visitors.
-          </p>
-        </section>
-
-        <section class="legal-section" id="information">
-          <span class="legal-section__number">02 / INFORMATION</span>
-          <h2>Information you choose to provide.</h2>
-
-          <p>
-            Most of the portfolio can be explored without creating an
-            account or submitting personal information.
-          </p>
-
-          <p>
-            If you contact Shashwat through email, LinkedIn, GitHub or another
-            external service, the information you voluntarily provide is
-            processed by that service and may also be visible to Shashwat
-            as part of the communication.
-          </p>
-
-          <p>
-            This website does not currently operate a server-side account
-            system or a database containing visitor profiles.
-          </p>
-        </section>
-
-        <section class="legal-section" id="storage">
-          <span class="legal-section__number">03 / LOCAL STORAGE</span>
-          <h2>Your browser remembers small preferences.</h2>
-
-          <p>
-            The website may use browser
-            <strong>localStorage</strong> to remember interface preferences.
-            This currently includes the selected visual theme and, where
-            applicable, whether a privacy notice has been dismissed.
-          </p>
-
-          <p>
-            These preferences are stored locally by your browser. They are
-            not intended to function as a personal identity profile and are
-            not used by this website to identify you.
-          </p>
-
-          <div class="legal-note">
-            <p>
-              <strong>In simple terms:</strong> changing the site's atmosphere
-              can be remembered between visits, but the website does not need
-              an account to do that.
-            </p>
-          </div>
-        </section>
-
-        <section class="legal-section" id="workspace">
-          <span class="legal-section__number">04 / WORKSPACE</span>
-          <h2>Interactive tools run in your browser.</h2>
-
-          <p>
-            Some portfolio Workspace features allow you to draw pixels,
-            manipulate images, generate procedural scenes or interact with
-            browser-based demonstrations.
-          </p>
-
-          <p>
-            Where a Workspace explicitly states that processing occurs
-            locally, the operation is performed in your browser rather than
-            being intentionally uploaded to a server by the portfolio.
-          </p>
-
-          <p>
-            You should still avoid using highly sensitive, confidential or
-            private material in any online tool unless you have independently
-            verified its behaviour and security requirements.
-          </p>
-        </section>
-
-        <section class="legal-section" id="external">
-          <span class="legal-section__number">05 / EXTERNAL SERVICES</span>
-          <h2>Some links leave this website.</h2>
-
-          <p>
-            The portfolio links to external services including GitHub and
-            LinkedIn. Those services operate independently and have their own
-            privacy policies, cookies, analytics systems and data practices.
-          </p>
-
-          <p>
-            Shashwat Aneja does not control the privacy practices of external
-            websites and cannot guarantee how those services process data
-            after you leave this website.
-          </p>
-        </section>
-
-        <section class="legal-section" id="retention">
-          <span class="legal-section__number">06 / RETENTION</span>
-          <h2>No unnecessary visitor database.</h2>
-
-          <p>
-            The portfolio does not currently maintain a dedicated visitor
-            account database or intentionally retain ordinary browsing
-            information as a personal profile.
-          </p>
-
-          <p>
-            Information sent directly to Shashwat through email or an
-            external communication platform may remain available in that
-            service according to its own retention and deletion practices.
-          </p>
-        </section>
-
-        <section class="legal-section" id="changes">
-          <span class="legal-section__number">07 / CHANGES</span>
-          <h2>This page can evolve with the website.</h2>
-
-          <p>
-            The website, its technologies and its data practices may change
-            as new features are introduced. This page will be updated when
-            those changes materially affect the way information is handled.
-          </p>
-
-          <p>
-            Continued use of the website after an updated version of this
-            policy is published means that you have had an opportunity to
-            review the revised information.
-          </p>
-        </section>
-
-      </article>
-    </div>
-
-    <footer class="legal-footer">
-      <span>SHASHWAT ANEJA / PRIVACY</span>
-
-      <div class="legal-footer__links">
-        <a href="/">Portfolio</a>
-        <a href="/terms.html">Terms</a>
-        <a href="mailto:hello@shashwataneja.com">Contact</a>
-      </div>
-    </footer>
-
-  </main>
-
-  <script src="/js/theme.js"></script>
-  <script src="/js/experience.js"></script>
-
-</body>
-</html>
+<title>Privacy | Shashwat Aneja</title>
+<meta name="description" content="Privacy information for Shashwat Aneja’s personal developer portfolio.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://shashwataneja.com/privacy.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Shashwat Aneja"><meta property="og:title" content="Privacy | Shashwat Aneja"><meta property="og:description" content="Privacy information for Shashwat Aneja’s personal developer portfolio."><meta property="og:url" content="https://shashwataneja.com/privacy.html"><meta property="og:image" content="https://shashwataneja.com/assets/og/shashwat-aneja-portfolio.png"><meta property="og:image:alt" content="Shashwat Aneja portfolio"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Privacy | Shashwat Aneja"><meta name="twitter:description" content="Privacy information for Shashwat Aneja’s personal developer portfolio."><meta name="twitter:image" content="https://shashwataneja.com/assets/og/shashwat-aneja-portfolio.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Shashwat Aneja">
+<meta name="theme-color" content="#0B0A0F">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="stylesheet" href="/css/field.css">
+<style>
+/* Legal-page resident robot: explicit geometry so it cannot inherit a broken partial layout. */
+.legal-robot{
+  position:fixed!important; left:0!important; top:0!important; right:auto!important;
+  width:112px!important; height:124px!important; z-index:135!important;
+  transform:translate3d(calc(var(--rx,82vw) - 56px),calc(var(--ry,68vh) - 62px),0) rotate(var(--robot-rotation,0deg));
+  transform-origin:50% 50%; cursor:grab; touch-action:none; user-select:none;
+  -webkit-user-select:none; pointer-events:auto!important; will-change:transform;
+  filter:drop-shadow(0 10px 18px rgba(0,0,0,.22));
+}
+.legal-robot.is-dragging{cursor:grabbing;filter:drop-shadow(0 16px 28px rgba(0,0,0,.38))}
+.legal-robot > *{box-sizing:border-box}
+.legal-robot .guide-robot__antenna{display:block!important;position:absolute!important;left:53px!important;top:3px!important;width:6px!important;height:15px!important;border-left:2px solid var(--robot-limb)!important;}
+.legal-robot .guide-robot__antenna:after{content:"";position:absolute;left:-4px;top:-5px;width:7px;height:7px;border:1px solid var(--robot-border);border-radius:50%;background:var(--robot-shell);box-shadow:0 0 10px var(--robot-glow)}
+.legal-robot .guide-robot__head{position:absolute!important;display:block!important;left:24px!important;top:17px!important;width:64px!important;height:46px!important;border:2px solid var(--robot-border)!important;border-radius:17px!important;background:var(--robot-shell)!important;box-shadow:inset 0 0 0 1px var(--robot-glow),0 0 0 1px var(--robot-outline)!important;clip-path:none!important;transition:transform .24s var(--ease)!important;}
+.legal-robot .guide-robot__head:after{content:"";position:absolute;left:50%;bottom:7px;width:11px;height:4px;border-bottom:1.5px solid var(--robot-eye);border-radius:0 0 10px 10px;transform:translateX(-50%);opacity:.85}
+.legal-robot .guide-robot__eye{position:absolute!important;display:block!important;top:19px!important;width:8px!important;height:8px!important;border:0!important;border-radius:50%!important;background:var(--robot-eye)!important;box-shadow:0 0 8px var(--robot-glow)!important;transition:transform .18s ease,opacity .2s ease!important;}
+.legal-robot .guide-robot__eye:first-child{left:17px!important}.legal-robot .guide-robot__eye:last-child{right:17px!important}
+.legal-robot .guide-robot__neck{display:block!important;position:absolute!important;left:51px!important;top:61px!important;width:10px!important;height:9px!important;border-left:2px solid var(--robot-limb)!important;border-right:2px solid var(--robot-limb)!important;background:transparent!important}
+.legal-robot .guide-robot__body{position:absolute!important;display:block!important;left:36px!important;top:67px!important;width:40px!important;height:43px!important;border:2px solid var(--robot-border)!important;border-radius:11px!important;background:var(--robot-body)!important;box-shadow:inset 0 0 0 1px var(--robot-glow),0 0 0 1px var(--robot-outline)!important;clip-path:none!important;transition:transform .24s ease!important}
+.legal-robot .guide-robot__panel{display:block!important;position:absolute!important;left:9px!important;top:10px!important;width:18px!important;height:10px!important;border:1px solid var(--robot-border)!important;background:color-mix(in srgb,var(--robot-eye) 9%,transparent)!important}
+.legal-robot .guide-robot__indicator{position:absolute!important;display:block!important;left:15px!important;top:25px!important;width:7px!important;height:7px!important;border-radius:50%!important;background:var(--robot-eye)!important;box-shadow:0 0 9px var(--robot-glow)!important}
+.legal-robot .guide-robot__arm{display:block!important;position:absolute!important;top:69px!important;width:8px!important;height:31px!important;border:0!important;border-radius:6px!important;background:var(--robot-limb)!important;transform-origin:50% 8%!important;transition:transform .3s var(--ease)!important}
+.legal-robot .guide-robot__arm--left{left:23px!important;transform:rotate(20deg)!important}.legal-robot .guide-robot__arm--right{right:23px!important;transform:rotate(-20deg)!important}
+.legal-robot .guide-robot__hand{display:block!important;position:absolute!important;width:10px!important;height:10px!important;border:1px solid var(--robot-border)!important;border-radius:50%!important;background:var(--robot-shell)!important;top:94px!important}
+.legal-robot .guide-robot__hand--left{left:19px!important}.legal-robot .guide-robot__hand--right{right:19px!important}
+.legal-robot .guide-robot__leg{display:block!important;position:absolute!important;top:106px!important;width:7px!important;height:14px!important;background:var(--robot-limb)!important;border-radius:4px!important}
+.legal-robot .guide-robot__leg--left{left:43px!important}.legal-robot .guide-robot__leg--right{right:43px!important}
+.legal-robot .guide-robot__foot{display:block!important;position:absolute!important;top:117px!important;width:14px!important;height:6px!important;border:1px solid var(--robot-border)!important;border-radius:5px!important;background:var(--robot-shell)!important}
+.legal-robot .guide-robot__foot--left{left:37px!important}.legal-robot .guide-robot__foot--right{right:37px!important}
+.legal-robot .guide-robot__signal{display:block!important;position:absolute!important;right:16px!important;top:15px!important;width:5px!important;height:5px!important;border-radius:50%!important;background:var(--sage)!important;opacity:.8}
+.legal-robot .guide-robot__label{display:block!important;position:absolute!important;left:56px!important;top:-10px!important;transform:translate(-50%,-100%)!important;color:var(--lavender)!important;font:7px/1 "IBM Plex Mono",monospace!important;letter-spacing:.08em!important;white-space:nowrap!important;pointer-events:none!important;opacity:.85!important}
+.legal-robot[data-emotion-label]::before{content:attr(data-emotion-label);position:absolute;left:56px;top:-8px;transform:translate(-50%,-100%);color:var(--lavender);font:7px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;white-space:nowrap;pointer-events:none;opacity:.82}
+.legal-robot.is-dragging .guide-robot__head{transform:rotate(calc(5deg + var(--drag-tilt,0deg))) translateY(-2px)!important;transition:none!important}
+.legal-robot.is-dragging .guide-robot__arm--left{transform:rotate(calc(24deg - var(--drag-tilt,0deg)))!important;transition:none!important}
+.legal-robot.is-dragging .guide-robot__arm--right{transform:rotate(calc(-18deg + var(--drag-tilt,0deg)))!important;transition:none!important}
+.legal-robot.is-dragging .guide-robot__body{transform:rotate(calc(var(--drag-tilt,0deg)*.45)) translateY(var(--drag-yaw,0px))!important;transition:none!important}
+.legal-robot.is-curious .guide-robot__head{transform:rotate(-7deg) translateY(-3px)!important}.legal-robot.is-curious .guide-robot__eye:first-child{transform:scale(1.22)!important}.legal-robot.is-curious .guide-robot__eye:last-child{transform:scale(.9)!important}
+.legal-robot.is-excited .guide-robot__eye{transform:scale(1.35)!important}.legal-robot.is-happy .guide-robot__eye{transform:scale(1.1)!important}.legal-robot.is-surprised .guide-robot__eye{transform:scale(1.5)!important}.legal-robot.is-sleepy .guide-robot__eye{transform:scaleY(.35)!important}
+.legal-robot.is-celebrate .guide-robot__arm--left{transform:rotate(-68deg)!important}.legal-robot.is-celebrate .guide-robot__arm--right{transform:rotate(68deg)!important}
+.legal-robot.is-drag-landing{animation:legalRobotLanding .52s cubic-bezier(.2,.85,.25,1)}
+@keyframes legalRobotLanding{0%{filter:drop-shadow(0 18px 30px rgba(0,0,0,.42))}55%{transform:translate3d(calc(var(--rx,82vw) - 56px),calc(var(--ry,68vh) - 62px),0) rotate(var(--robot-rotation,0deg)) scaleY(.91) scaleX(1.05)}100%{filter:drop-shadow(0 10px 18px rgba(0,0,0,.22));transform:translate3d(calc(var(--rx,82vw) - 56px),calc(var(--ry,68vh) - 62px),0) rotate(0deg) scale(1)}}
+@media(max-width:600px){.legal-robot{width:88px!important;height:102px!important;transform:translate3d(calc(var(--rx,78vw) - 44px),calc(var(--ry,68vh) - 51px),0) rotate(var(--robot-rotation,0deg))}.legal-robot .guide-robot__head{left:19px!important;top:13px!important;width:50px!important;height:36px!important;border-radius:13px!important}.legal-robot .guide-robot__eye{top:14px!important;width:6px!important;height:6px!important}.legal-robot .guide-robot__eye:first-child{left:13px!important}.legal-robot .guide-robot__eye:last-child{right:13px!important}.legal-robot .guide-robot__neck{left:40px!important;top:49px!important;height:7px!important}.legal-robot .guide-robot__body{left:28px!important;top:53px!important;width:32px!important;height:34px!important;border-radius:9px!important}.legal-robot .guide-robot__panel{left:7px!important;top:8px!important;width:14px!important;height:8px!important}.legal-robot .guide-robot__indicator{left:12px!important;top:21px!important;width:6px!important;height:6px!important}.legal-robot .guide-robot__arm{top:55px!important;width:7px!important;height:25px!important}.legal-robot .guide-robot__arm--left{left:18px!important}.legal-robot .guide-robot__arm--right{right:18px!important}.legal-robot .guide-robot__hand{top:76px!important;width:8px!important;height:8px!important}.legal-robot .guide-robot__hand--left{left:14px!important}.legal-robot .guide-robot__hand--right{right:14px!important}.legal-robot .guide-robot__leg{top:84px!important;width:6px!important;height:12px!important}.legal-robot .guide-robot__leg--left{left:34px!important}.legal-robot .guide-robot__leg--right{right:34px!important}.legal-robot .guide-robot__foot{top:94px!important;width:12px!important;height:5px!important}.legal-robot .guide-robot__foot--left{left:29px!important}.legal-robot .guide-robot__foot--right{right:29px!important}.legal-robot .guide-robot__antenna{left:41px!important;top:2px!important;height:11px!important}.legal-robot .guide-robot__label,.legal-robot[data-emotion-label]::before{left:44px!important;font-size:6px!important}}
+@media(prefers-reduced-motion:reduce){.legal-robot,.legal-robot *{transition:none!important}.legal-robot.is-drag-landing{animation:none!important}}
+\n</style>\n</head>\n<body class="legal-page">
+<div class="legal-mark" aria-hidden="true">P</div>
+<div class="guide-robot legal-robot" data-guide-robot role="img" aria-label="Guide robot. Drag me if I get in your way." tabindex="0">
+<div class="guide-robot__antenna"></div>
+<div class="guide-robot__head"><span class="guide-robot__eye"></span><span class="guide-robot__eye"></span></div>
+<div class="guide-robot__neck"></div>
+<div class="guide-robot__body"><span class="guide-robot__panel"></span><span class="guide-robot__indicator"></span></div>
+<div class="guide-robot__arm guide-robot__arm--left"></div><div class="guide-robot__arm guide-robot__arm--right"></div>
+<div class="guide-robot__hand guide-robot__hand--left"></div><div class="guide-robot__hand guide-robot__hand--right"></div>
+<div class="guide-robot__leg guide-robot__leg--left"></div><div class="guide-robot__leg guide-robot__leg--right"></div>
+<div class="guide-robot__foot guide-robot__foot--left"></div><div class="guide-robot__foot guide-robot__foot--right"></div>
+<div class="guide-robot__signal"></div><span class="guide-robot__label mono" data-guide-label>FOLLOWING</span>
+</div>
+<div class="custom-cursor" data-cursor aria-hidden="true"><span></span><small class="mono">EXPLORE</small></div>
+
+<main class="legal-shell">
+<header class="legal-header"><div><p class="legal-kicker">SITE / PRIVACY</p><h1 class="legal-title">Privacy.</h1></div><p class="legal-intro">A straightforward explanation of what this portfolio does, does not, and may store while you explore it.</p></header>
+<div class="legal-meta"><span>PERSONAL PORTFOLIO</span><span>LAST REVIEWED / 2026</span></div>
+<div class="legal-content"><nav class="legal-index" aria-label="Privacy sections"><span class="legal-index-label">INDEX</span><a href="#overview">Overview</a><a href="#information">Information</a><a href="#storage">Local Storage</a><a href="#workspace">Workspace</a><a href="#external">External Services</a><a href="#retention">Retention</a><a href="#changes">Changes</a></nav><article>
+<section class="legal-section" id="overview"><span class="legal-section__number">01 / OVERVIEW</span><h2>A personal website, not a tracking platform.</h2><p>This website is the personal developer portfolio of <strong>Shashwat Aneja</strong>. It presents software, games, experiments, interactive studies, writing and other personal work.</p><p>The website is not operated as an advertising platform and does not intentionally build advertising profiles from visitors.</p></section>
+<section class="legal-section" id="information"><span class="legal-section__number">02 / INFORMATION</span><h2>Information you choose to provide.</h2><p>Most of the portfolio can be explored without creating an account or submitting personal information.</p><p>If you contact Shashwat through email, LinkedIn, GitHub or another external service, the information you voluntarily provide is processed by that service and may also be visible to Shashwat as part of the communication.</p><p>This website does not currently operate a server-side visitor account system or a database containing visitor profiles.</p></section>
+<section class="legal-section" id="storage"><span class="legal-section__number">03 / LOCAL STORAGE</span><h2>Your browser remembers small preferences.</h2><p>The website may use browser <strong>localStorage</strong> to remember interface preferences, including the selected visual theme and, where applicable, whether a privacy notice has been dismissed.</p><p>These preferences are stored locally by your browser. They are not intended to function as a personal identity profile.</p><div class="legal-note"><p><strong>In simple terms:</strong> changing the site's atmosphere can be remembered between visits without requiring an account.</p></div></section>
+<section class="legal-section" id="workspace"><span class="legal-section__number">04 / WORKSPACE</span><h2>Interactive tools run in your browser.</h2><p>Some Workspace features allow you to draw pixels, manipulate images, generate procedural scenes or interact with browser-based demonstrations.</p><p>Where a Workspace explicitly states that processing occurs locally, the operation is performed in your browser rather than intentionally uploaded to a server by the portfolio.</p><p>You should still avoid using highly sensitive, confidential or private material in any online tool unless you have independently verified its behaviour and security requirements.</p></section>
+<section class="legal-section" id="external"><span class="legal-section__number">05 / EXTERNAL SERVICES</span><h2>Some links leave this website.</h2><p>The portfolio links to external services including GitHub and LinkedIn. Those services operate independently and have their own privacy policies, cookies, analytics systems and data practices.</p><p>Shashwat Aneja does not control the privacy practices of external websites and cannot guarantee how those services process data after you leave this website.</p></section>
+<section class="legal-section" id="retention"><span class="legal-section__number">06 / RETENTION</span><h2>No unnecessary visitor database.</h2><p>The portfolio does not currently maintain a dedicated visitor account database or intentionally retain ordinary browsing information as a personal profile.</p><p>Information sent directly to Shashwat through email or an external communication platform may remain available in that service according to its own retention and deletion practices.</p></section>
+<section class="legal-section" id="changes"><span class="legal-section__number">07 / CHANGES</span><h2>This page can evolve with the website.</h2><p>The website, its technologies and its data practices may change as new features are introduced. This page will be updated when those changes materially affect the way information is handled.</p></section>
+</article></div>
+<footer class="legal-footer"><span>SHASHWAT ANEJA / PRIVACY</span><div class="legal-footer__links"><a href="/">Portfolio</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:connect@shashwataneja.com">Contact</a></div></footer>
+</main>
+<script src="/js/theme.js"></script><script src="/js/experience.js"></script>
+</body></html>
