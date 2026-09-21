@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="The page you're looking for doesn't exist. Explore Shashwat Aneja's digital space instead."
+  >
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B0A0F">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+  <title>404 | You've wandered somewhere else</title>
+
+  <style>
+    :root {
+      --void: #0B0A0F;
+      --charcoal: #1A1823;
+      --lavender: #B7A7D9;
+      --fog: #DCCDDC;
+      --text: #F1EDF4;
+      --muted: #A9A1B2;
+      --dim: #70697A;
+      --line: rgba(183, 167, 217, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--void);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      overflow: hidden;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at var(--mx, 70%) var(--my, 35%),
+          rgba(183, 167, 217, 0.09),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(167, 196, 176, 0.035),
+          transparent 25%
+        ),
+        var(--void);
+
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      transition: background-position 0.5s ease;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      mix-blend-mode: screen;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      isolation: isolate;
+    }
+
+    /* --------------------------------------------------
+       Atmospheric orbit
+    -------------------------------------------------- */
+
+    .orbit {
+      position: absolute;
+      width: min(72vw, 820px);
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      left: -18vw;
+      top: 8vh;
+      transform: rotate(-18deg);
+      pointer-events: none;
+    }
+
+    .orbit::before,
+    .orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(183, 167, 217, 0.08);
+    }
+
+    .orbit::before {
+      inset: 12%;
+    }
+
+    .orbit::after {
+      inset: 27%;
+    }
+
+    .orbit-marker {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--lavender);
+      box-shadow: 0 0 22px rgba(183, 167, 217, 0.35);
+      top: 18%;
+      right: 8%;
+      animation: markerDrift 5s ease-in-out infinite;
+    }
+
+    @keyframes markerDrift {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-8px, 12px);
+      }
+    }
+
+    /* --------------------------------------------------
+       Top metadata
+    -------------------------------------------------- */
+
+    .topline {
+      position: fixed;
+      top: 28px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 5;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .status-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--lavender);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.35;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+    }
+
+    /* --------------------------------------------------
+       Main composition
+    -------------------------------------------------- */
+
+    .content {
+      position: relative;
+      width: min(100%, 1040px);
+      z-index: 2;
+      padding: 90px 0 70px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lavender);
+    }
+
+    .eyebrow-line {
+      width: 42px;
+      height: 1px;
+      background: var(--lavender);
+      opacity: 0.55;
+    }
+
+    h1 {
+      margin: 28px 0 0;
+
+      max-width: 900px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(4.4rem, 11vw, 10rem);
+      font-weight: 400;
+      line-height: 0.82;
+      letter-spacing: -0.075em;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    h1 .accent {
+      color: var(--lavender);
+      font-style: italic;
+    }
+
+    .description {
+      max-width: 510px;
+      margin: 42px 0 0;
+
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* --------------------------------------------------
+       Interactive recovery panel
+    -------------------------------------------------- */
+
+    .recovery {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .home-link {
+      position: relative;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+
+      min-height: 52px;
+      padding: 0 20px;
+
+      color: var(--void);
+      background: var(--text);
+
+      text-decoration: none;
+
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+
+      transition:
+        transform 220ms ease,
+        background 220ms ease;
+    }
+
+    .home-link:hover {
+      transform: translateY(-3px);
+      background: var(--fog);
+    }
+
+    .home-link::after {
+      content: "↗";
+      font-size: 15px;
+      transition: transform 220ms ease;
+    }
+
+    .home-link:hover::after {
+      transform: translate(3px, -3px);
+    }
+
+    .back-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid transparent;
+      transition:
+        color 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    /* --------------------------------------------------
+       Little system readout
+    -------------------------------------------------- */
+
+    .readout {
+      position: absolute;
+      right: 0;
+      bottom: 45px;
+
+      width: 230px;
+      padding: 16px;
+
+      border-top: 1px solid var(--line);
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 9px;
+      line-height: 1.8;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    .readout-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .readout-value {
+      color: var(--muted);
+    }
+
+    /* --------------------------------------------------
+       Tiny floating guide
+    -------------------------------------------------- */
+
+    .guide {
+      position: fixed;
+      right: clamp(30px, 7vw, 110px);
+      top: 50%;
+      z-index: 4;
+
+      width: 48px;
+      height: 62px;
+
+      transform:
+        translate3d(
+          var(--guide-x, 0px),
+          var(--guide-y, 0px),
+          0
+        );
+
+      transition: transform 900ms cubic-bezier(.2,.75,.2,1);
+      pointer-events: none;
+    }
+
+    .guide-head {
+      position: absolute;
+      top: 0;
+      left: 7px;
+
+      width: 34px;
+      height: 28px;
+
+      border: 1px solid rgba(241, 237, 244, 0.65);
+      border-radius: 8px;
+
+      background: rgba(26, 24, 35, 0.9);
+    }
+
+    .guide-eye {
+      position: absolute;
+      top: 11px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--lavender);
+      box-shadow: 0 0 8px rgba(183, 167, 217, 0.5);
+    }
+
+    .guide-eye:first-child {
+      left: 9px;
+    }
+
+    .guide-eye:last-child {
+      right: 9px;
+    }
+
+    .guide-body {
+      position: absolute;
+      left: 13px;
+      top: 33px;
+
+      width: 22px;
+      height: 25px;
+
+      border: 1px solid rgba(241, 237, 244, 0.4);
+      border-radius: 5px;
+
+      background: rgba(26, 24, 35, 0.8);
+    }
+
+    .guide-light {
+      position: absolute;
+      left: 8px;
+      top: 8px;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+      background: var(--lavender);
+    }
+
+    .guide-arm {
+      position: absolute;
+      top: 37px;
+      width: 4px;
+      height: 16px;
+      border-radius: 4px;
+      background: rgba(241, 237, 244, 0.5);
+      transform-origin: top center;
+    }
+
+    .guide-arm.left {
+      left: 8px;
+      transform: rotate(18deg);
+    }
+
+    .guide-arm.right {
+      right: 7px;
+      transform: rotate(-18deg);
+    }
+
+    /* --------------------------------------------------
+       Footer
+    -------------------------------------------------- */
+
+    footer {
+      position: fixed;
+      left: 32px;
+      right: 32px;
+      bottom: 25px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+
+      z-index: 5;
+    }
+
+    .footer-mark {
+      color: rgba(183, 167, 217, 0.7);
+    }
+
+    /* --------------------------------------------------
+       Responsive
+    -------------------------------------------------- */
+
+    @media (max-width: 760px) {
+      body {
+        overflow: auto;
+      }
+
+      .page {
+        min-height: 100svh;
+        padding: 26px 22px;
+      }
+
+      .topline {
+        top: 20px;
+        left: 22px;
+        right: 22px;
+      }
+
+      .topline .right {
+        display: none;
+      }
+
+      .orbit {
+        width: 125vw;
+        left: -65vw;
+        top: 15vh;
+      }
+
+      .content {
+        padding: 80px 0 100px;
+      }
+
+      h1 {
+        font-size: clamp(4rem, 20vw, 7rem);
+      }
+
+      .description {
+        font-size: 14px;
+        margin-top: 30px;
+      }
+
+      .recovery {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 32px;
+      }
+
+      .readout {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: 55px;
+      }
+
+      .guide {
+        display: none;
+      }
+
+      footer {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        margin-top: 30px;
+        padding-bottom: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="orbit" aria-hidden="true">
+      <span class="orbit-marker"></span>
+    </div>
+
+    <div class="topline">
+      <div class="status">
+        <span class="status-dot"></span>
+        Navigation anomaly detected
+      </div>
+
+      <div class="right">
+        Portfolio / Recovery Channel
+      </div>
+    </div>
+
+    <main class="content">
+
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span>
+        404 / Coordinates lost
+      </div>
+
+      <h1>
+        You took a
+        <span class="accent">wrong turn.</span>
+      </h1>
+
+      <p class="description">
+        This part of the digital world hasn't been built yet.
+        The page you're looking for may have moved, disappeared,
+        or simply never existed.
+      </p>
+
+      <div class="recovery">
+        <a class="home-link" href="/">
+          Return to the main world
+        </a>
+
+        <a class="back-link" href="javascript:history.back()">
+          ← Go back
+        </a>
+      </div>
+
+      <div class="readout" aria-hidden="true">
+        <div class="readout-row">
+          <span>Location</span>
+          <span class="readout-value" id="location-readout">UNKNOWN</span>
+        </div>
+
+        <div class="readout-row">
+          <span>Status</span>
+          <span class="readout-value">OFF-MAP</span>
+        </div>
+
+        <div class="readout-row">
+          <span>Recovery</span>
+          <span class="readout-value">AVAILABLE</span>
+        </div>
+      </div>
+
+    </main>
+
+    <div class="guide" aria-hidden="true">
+      <div class="guide-head">
+        <span class="guide-eye"></span>
+        <span class="guide-eye"></span>
+      </div>
+
+      <div class="guide-body">
+        <span class="guide-light"></span>
+      </div>
+
+      <span class="guide-arm left"></span>
+      <span class="guide-arm right"></span>
+    </div>
+
+    <footer>
+      <span>Shashwat Aneja</span>
+      <span class="footer-mark">The map continues →</span>
+    </footer>
+
+  </div>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const locationReadout = document.getElementById("location-readout");
+      const guide = document.querySelector(".guide");
+
+      /*
+       * Give the 404 page a small sense of awareness.
+       * The environment subtly follows the cursor.
+       */
+      window.addEventListener("pointermove", (event) => {
+        const x = (event.clientX / window.innerWidth) * 100;
+        const y = (event.clientY / window.innerHeight) * 100;
+
+        root.style.setProperty("--mx", `${x}%`);
+        root.style.setProperty("--my", `${y}%`);
+
+        if (guide) {
+          const moveX = ((event.clientX / window.innerWidth) - 0.5) * 18;
+          const moveY = ((event.clientY / window.innerHeight) - 0.5) * 14;
+
+          guide.style.setProperty("--guide-x", `${moveX}px`);
+          guide.style.setProperty("--guide-y", `${moveY}px`);
+        }
+      });
+
+      /*
+       * Show the requested path as a tiny diagnostic readout.
+       */
+      if (locationReadout) {
+        const path = window.location.pathname || "/";
+
+        const cleanPath =
+          path.length > 28
+            ? `${path.slice(0, 12)}…${path.slice(-12)}`
+            : path;
+
+        locationReadout.textContent = cleanPath;
+      }
+    })();
+  </script>
+
+</body>
+</html>
