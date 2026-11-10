@@ -110,7 +110,7 @@ def classify(result: dict) -> list[dict]:
     check("Live CSP in HTML", 'http-equiv="Content-Security-Policy"' in home["body"] if site_live else None,
           "HTML policy present on homepage")
     check("Live privacy policy updated",
-          all(s in privacy["body"] for s in ("shashwat-theme", "Privacy grievance", "nominate someone"))
+          all(s in privacy["body"] for s in ("shashwat-theme", "Privacy grievance", "nominate someone", "Cloudflare Email Routing", "Google Gmail"))
           if privacy["status"] == 200 else None,
           f"HTTP {privacy['status']}; disclosure markers")
     check("Security contact published",
