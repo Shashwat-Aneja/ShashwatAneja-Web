@@ -13,6 +13,12 @@
 - CSP meta is installed on examined HTML pages. Its effect must be checked in a real browser.
 - `_headers` is **conditional**: it only takes effect in Cloudflare Pages static-asset deployments. Cloudflare DNS alone does not enable it.
 
+## New verified provider findings (10 November 2026)
+- The connected Gmail account contains multiple messages addressed to `connect@shashwataneja.com`, including messages received on 9 November 2026. This supports working inbound delivery to that mailbox; it does **not** prove all senders and privacy requests will be delivered, and does not identify the domain's MX or forwarding service.
+- Resend lists a verified outbound-only sending domain `mail.shashwataneja.com`, with sending enabled, receiving disabled, and click/open tracking disabled. Verified DKIM and SPF records relate to that **sending subdomain**. Do not mistake this for receiving or a confirmed part of the portfolio's data processing; its usage may relate to other services.
+- Vercel's linked account returned no project connected to `ShashwatAneja-Web` and rejected access to the apex domain (403). Vercel's unauthenticated domain-configuration query identifies Cloudflare nameservers and Cloudflare IPs. This is **not evidence of a Vercel site misconfiguration** because this apex domain is not controlled through the accessible Vercel account.
+- Direct GET/HEAD requests to the public domain could not be completed from the assistant's execution environment. GitHub Actions now performs an independent read-only production audit and records whether the live source and headers are verifiable. Review its results before changing severity or asserting deployment.
+
 ## Not yet verified
 | Control or data flow | Evidence needed | Owner action |
 | --- | --- | --- |
@@ -20,7 +26,7 @@
 | HTTP headers, TLS and redirects | Fresh HTTP response and independent TLS scan | Check CSP, X-Frame-Options, HSTS, nosniff, HTTPS |
 | Cloudflare zone settings | HTTPS mode, cache, bot protection, WAF, access accounts | Audit relevant zone |
 | Hosting security logs | Whether IP/request logs exist; purpose, access, region, retention | Obtain provider settings and contractual terms |
-| Email provider for connect@ address | MX/service, mailbox access and storage, deletion/backup rules | Verify inbox and provider |
+| Email provider for connect@ address | Recent incoming messages were confirmed in a connected Google Gmail inbox on 9 November 2026; upstream forwarding/MX routing, deletion, backups and mailbox MFA are unverified | Verify provider configuration and retention |
 | MFA and privilege separation | Host, GitHub, DNS, email account security settings | Enable MFA or passkeys, revoke unused access |
 | Backups and incident readiness | Recovery test and evidence/notification route | Test without personal data |
 | Data processor contracts | Applicable provider terms and safeguards | Review where DPDP applies |
@@ -31,7 +37,7 @@
 | Processing context | Potential data | Stated purpose | Storage / processor | Retention |
 | --- | --- | --- | --- | --- |
 | Page delivery and abuse prevention | IP address, user agent, requested path, timing | Serve site, prevent misuse | Cloudflare network and **unverified origin host** | **Unknown; verify** |
-| Visitor email | Sender email/name, message, attachments | Respond to inquiry | **Unverified email provider** | **Unknown; define and verify** |
+| Visitor email | Sender email/name, message, attachments | Respond to inquiry | **Google Gmail inbox verified for the published contact address; forwarding route unknown** | **Unknown; define and verify** |
 | Theme choice | Theme identifier | Remember site appearance | Visitor's localStorage | Until cleared or overwritten |
 | Privacy notice dismissal | Dismissal flag | Avoid re-showing notice | Visitor's localStorage | Until cleared |
 | Image Lab | User-selected image pixels and displayed filename | Local image processing | Browser canvas/object URL; reviewed code shows no upload | During page session; file not intentionally retained server-side |
@@ -47,7 +53,7 @@ When applicable, review requirements for itemised notices, processing basis, ind
 Official rules: https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf
 
 ## Next steps before asserting compliance
-1. Verify which provider actually deploys shashwataneja.com. Ensure production carries latest privacy HTML and security headers.
+1. Verify which provider actually deploys shashwataneja.com. Review the live-audit GitHub Actions report for the production site's privacy HTML, TLS, DNS, and response headers. Ensure production carries latest privacy HTML and security headers.
 2. Inspect browser DevTools > Network with a clean profile for cookies, analytics, cross-origin requests, CSP violations and local storage.
 3. Inspect Cloudflare zone access, DNS, encryption mode, HTTPS redirect, caching and security rules; do not purge or alter unrelated subdomains without review.
 4. Verify domain-email provider, receiving mailbox, SPF/DKIM/DMARC and retention settings.
