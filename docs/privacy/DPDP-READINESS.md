@@ -11,27 +11,35 @@
 - No external executable script URLs in the inspected page source. Project archive executable inline JS was moved into a same-origin JS file.
 - Privacy notice has a contact route and rights/grievance instructions.
 - CSP meta is installed on examined HTML pages. Its effect must be checked in a real browser.
-- `_headers` is **conditional**: it only takes effect in Cloudflare Pages static-asset deployments. Cloudflare DNS alone does not enable it.
+- `_headers` does not apply to the current production origin: GitHub Pages, confirmed through the GitHub Pages API. Host-specific Cloudflare edge rules are needed for header protections.
 
-## Not yet verified
+## New verified provider findings (10 November 2026)
+- The connected Gmail account contains multiple messages addressed to `connect@shashwataneja.com`, including messages received on 9 November 2026. This supports working inbound delivery to that mailbox; it does **not** prove all senders and privacy requests will be delivered, and alone would not identify the domain's MX or forwarding service. The external DNS audit separately confirmed Cloudflare Email Routing MX records.
+- Resend lists a verified outbound-only sending domain `mail.shashwataneja.com`, with sending enabled, receiving disabled, and click/open tracking disabled. Verified DKIM and SPF records relate to that **sending subdomain**. Do not mistake this for receiving or a confirmed part of the portfolio's data processing; its usage may relate to other services.
+- Vercel's linked account returned no project connected to `ShashwatAneja-Web` and rejected access to the apex domain (403). Vercel's unauthenticated domain-configuration query identifies Cloudflare nameservers and Cloudflare IPs. This is **not evidence of a Vercel site misconfiguration** because this apex domain is not controlled through the accessible Vercel account.
+- Direct GET/HEAD requests from the assistant's execution environment failed, so the GitHub Actions runner was used instead. On 10 November 2026 it verified: HTTPS page and certificate (TLS 1.3), the latest privacy policy, the current homepage notice and security.txt live on the production domain. It also confirmed HTTP returns 200 without HTTPS redirect and there are no CSP, HSTS, nosniff, framing or Referrer-Policy response headers. The HTML CSP is live.
+- The GitHub Pages API confirms that `ShashwatAneja-Web` publishes `main` from repository root, custom domain `shashwataneja.com`, with `https_enforced: false`, HTTPS certificate state `bad_authz`, and status `built`. Cloudflare's public edge TLS is separately valid; Cloudflare-to-origin TLS mode is not yet verified.
+- Public DNS MX records are `route1.mx.cloudflare.net`, `route2.mx.cloudflare.net` and `route3.mx.cloudflare.net`, supporting Cloudflare Email Routing as the inbound provider. SPF and DMARC TXT records were detected; external DNS checks found **SPF softfail (`~all`)** and **DMARC monitoring (`p=none`)** at the apex. These are not automatically DPDP violations, but the apex's email spoofing protection is not in enforcement mode. Review authentic senders and DMARC reports before moving toward `quarantine` or `reject`.
+
+## Confirmed weaknesses and remaining account-level verification
 | Control or data flow | Evidence needed | Owner action |
 | --- | --- | --- |
-| Origin hosting / deployment pipeline | Hosting dashboard, domain attachment, production deployment/version | Identify source of truth for production |
-| HTTP headers, TLS and redirects | Fresh HTTP response and independent TLS scan | Check CSP, X-Frame-Options, HSTS, nosniff, HTTPS |
+| Origin hosting / deployment pipeline | **Verified GitHub Pages (main, /) with Cloudflare as edge**; actual Cloudflare zone account access remains unavailable | Audit Cloudflare zone settings and deployment cache |
+| HTTP headers, TLS and redirects | **Verified live defect**: HTTP 200 without HTTPS redirect; missing CSP header, clickjacking header, HSTS, nosniff, Referrer-Policy; valid HTTPS/TLS 1.3 and HTML CSP | Deploy and verify apex-only Cloudflare rules in `CLOUDFLARE-EDGE-REMEDIATION.md` |
 | Cloudflare zone settings | HTTPS mode, cache, bot protection, WAF, access accounts | Audit relevant zone |
 | Hosting security logs | Whether IP/request logs exist; purpose, access, region, retention | Obtain provider settings and contractual terms |
-| Email provider for connect@ address | MX/service, mailbox access and storage, deletion/backup rules | Verify inbox and provider |
+| Email provider for connect@ address | Google Gmail inbox receiving verified; Cloudflare Email Routing verified via public MX; exact forwarding-rule settings, deletion, backups and mailbox MFA unverified | Audit routing and retention in service dashboards |
 | MFA and privilege separation | Host, GitHub, DNS, email account security settings | Enable MFA or passkeys, revoke unused access |
 | Backups and incident readiness | Recovery test and evidence/notification route | Test without personal data |
 | Data processor contracts | Applicable provider terms and safeguards | Review where DPDP applies |
 | Data subject rights process | Working mailbox, identity checks and private tracking | Test with a controlled request |
-| Production privacy text | Live origin content vs GitHub branch | Confirm merge actually reaches production |
+| Production privacy text | **Verified live** via external GitHub Actions runner (homepage notice, policy and disclosure file) | Recheck after each change |
 
 ## Working data inventory (reconcile with providers before relying on it)
 | Processing context | Potential data | Stated purpose | Storage / processor | Retention |
 | --- | --- | --- | --- | --- |
-| Page delivery and abuse prevention | IP address, user agent, requested path, timing | Serve site, prevent misuse | Cloudflare network and **unverified origin host** | **Unknown; verify** |
-| Visitor email | Sender email/name, message, attachments | Respond to inquiry | **Unverified email provider** | **Unknown; define and verify** |
+| Page delivery and abuse prevention | IP address, user agent, requested path, timing | Serve site, prevent misuse | Cloudflare network and **GitHub Pages origin** | **Unknown; verify** |
+| Visitor email | Sender email/name, message, attachments | Respond to inquiry | **Cloudflare Email Routing indicated by MX; Google Gmail inbox verified for published address (exact forwarding rule unverified)** | **Unknown; define and verify** |
 | Theme choice | Theme identifier | Remember site appearance | Visitor's localStorage | Until cleared or overwritten |
 | Privacy notice dismissal | Dismissal flag | Avoid re-showing notice | Visitor's localStorage | Until cleared |
 | Image Lab | User-selected image pixels and displayed filename | Local image processing | Browser canvas/object URL; reviewed code shows no upload | During page session; file not intentionally retained server-side |
@@ -47,7 +55,7 @@ When applicable, review requirements for itemised notices, processing basis, ind
 Official rules: https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf
 
 ## Next steps before asserting compliance
-1. Verify which provider actually deploys shashwataneja.com. Ensure production carries latest privacy HTML and security headers.
+1. **Verified:** GitHub Pages publishes the portfolio from `main`; the external runner confirms latest privacy HTML is live. **Open:** Deploy Cloudflare HTTPS redirect and response-header rules, then rerun the live audit.
 2. Inspect browser DevTools > Network with a clean profile for cookies, analytics, cross-origin requests, CSP violations and local storage.
 3. Inspect Cloudflare zone access, DNS, encryption mode, HTTPS redirect, caching and security rules; do not purge or alter unrelated subdomains without review.
 4. Verify domain-email provider, receiving mailbox, SPF/DKIM/DMARC and retention settings.
