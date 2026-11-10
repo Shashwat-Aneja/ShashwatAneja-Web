@@ -9,6 +9,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 import shutil
 import socket
 import ssl
@@ -152,6 +153,14 @@ def main() -> None:
     print("Production audit (public, read-only):")
     for item in raw["checks"]:
         print(f"  {item['state']:<7} {item['check']}: {item['detail']}")
+    spf = [v.replace('"', '') for v in dns["SPF"].get("records", []) if "v=spf1" in v.lower()]
+    dmarc = [v.replace('"', '') for v in dns["DMARC"].get("records", []) if "v=DMARC1" in v.upper()]
+    spf_ending = "hard fail (-all)" if any("-all" in v for v in spf) else (
+        "soft fail (~all)" if any("~all" in v for v in spf) else "other/none")
+    dmarc_match = re.search(r"(?:^|;)\s*p\s*=\s*(none|quarantine|reject)", dmarc[0], re.I) if dmarc else None
+    dmarc_policy = dmarc_match.group(1).lower() if dmarc_match else "not identified"
+    print(f"  DNS SPF policy: {spf_ending}; record present: {bool(spf)}")
+    print(f"  DNS DMARC policy: {dmarc_policy}; record present: {bool(dmarc)}")
     for name in ("NS", "MX", "SPF", "DMARC"):
         item = dns[name]
         if name in ("SPF", "DMARC"):
@@ -171,6 +180,9 @@ def main() -> None:
                 detail = item["detail"].replace("|", "/").replace("\n", " ")
                 out.write(f"| {item['check']} | {item['state']} | {detail} |\n")
             out.write("\nChecks marked UNKNOWN were not verified. Check Cloudflare and hosting account settings separately.\n")
+    for item in raw["checks"]:
+        if item["state"] == "WARN":
+            print(f"::warning title=Live-site security gap::{item['check']}: {item['detail']}")
     print("Machine-readable report: production-security-audit.json")
     # CI succeeds if checks are executed; WARN/UNKNOWN are intentionally not treated as
     # successful security compliance. Review the report, do not use the job status as a pass.
