@@ -28,7 +28,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo "GitHub Pages configuration:"
-          gh api "repos/$GITHUB_REPOSITORY/pages" --jq '{html_url, cname, https_enforced, status, source}' || echo "Pages API unavailable or repository is not configured as a Pages site."
+          gh api "repos/$GITHUB_REPOSITORY/pages" --jq '{html_url, cname, https_enforced, https_certificate_state: .https_certificate.state, status, source}' || echo "Pages API unavailable or repository is not configured as a Pages site."
       - name: Save audit report
         if: always()
         uses: actions/upload-artifact@v4
