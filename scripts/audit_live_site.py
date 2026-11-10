@@ -154,7 +154,7 @@ def main() -> None:
     for item in raw["checks"]:
         print(f"  {item['state']:<7} {item['check']}: {item['detail']}")
     spf = [v.replace('"', '') for v in dns["SPF"].get("records", []) if "v=spf1" in v.lower()]
-    dmarc = [v.replace('"', '') for v in dns["DMARC"].get("records", []) if "v=DMARC1" in v.upper()]
+    dmarc = [v.replace('"', '') for v in dns["DMARC"].get("records", []) if "v=dmarc1" in v.lower()]
     spf_ending = "hard fail (-all)" if any("-all" in v for v in spf) else (
         "soft fail (~all)" if any("~all" in v for v in spf) else "other/none")
     dmarc_match = re.search(r"(?:^|;)\s*p\s*=\s*(none|quarantine|reject)", dmarc[0], re.I) if dmarc else None
