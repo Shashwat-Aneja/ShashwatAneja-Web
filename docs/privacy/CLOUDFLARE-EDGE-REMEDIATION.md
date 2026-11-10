@@ -4,7 +4,7 @@
 **Last live test: 10 November 2026.** A read-only GitHub Actions job confirmed the apex HTTPS site responds, but plain HTTP returns a **200** without redirect and the production homepage lacks a header CSP, HSTS, X-Frame-Options, X-Content-Type-Options and Referrer-Policy response header. The inline HTML CSP is present but cannot enforce `frame-ancestors`.
 
 ## Proven deployment configuration
-- Hosting: GitHub Pages using `main` at repository root, custom domain `shashwataneja.com`. Its API reports `https_enforced: false`.
+- Hosting: GitHub Pages using `main` at repository root, custom domain `shashwataneja.com`. Its API reports `https_enforced: false` and custom-domain certificate state `bad_authz`. This needs certificate verification before assuming origin-to-edge TLS is validated.
 - Edge DNS: Cloudflare nameservers `anastasia.ns.cloudflare.com` and `dax.ns.cloudflare.com`.
 - Inbound email: apex MX routes through Cloudflare Email Routing; recent messages addressed to the contact alias are in a connected Google Gmail mailbox.
 - Outbound email: separately verified Resend sending subdomain `mail.shashwataneja.com`; do not confuse it with inbound forwarding.
@@ -47,7 +47,13 @@ Cloudflare docs:
 - https://developers.cloudflare.com/ssl/edge-certificates/additional-options/always-use-https/
 
 ## Third fix: inspect origin SSL/TLS
-Before changing Cloudflare's SSL/TLS mode, inspect the GitHub Pages certificate state and Cloudflare's current origin mode. **Avoid Flexible** if possible; use Full (strict) only after the origin has a valid certificate, to avoid failed requests or redirect loops. Cloudflare's HTTPS edge certificate itself already passed TLS 1.3 validation in the independent audit.
+**Confirmed concern:** GitHub Pages reports `https_certificate.state = bad_authz` and `https_enforced = false`. The Cloudflare-facing certificate validates with TLS 1.3, but this does **not** prove the Cloudflare-to-GitHub connection is encrypted and verified.
+
+1. Inspect the Cloudflare zone's present SSL/TLS mode before changing anything. If it is Flexible, the origin connection may be HTTP; if Full but not Full (strict), certificate validation may be incomplete.
+2. Inspect GitHub Pages' custom domain/certificate diagnostics and Cloudflare DNS/proxy records. Resolve GitHub Pages domain authorisation and certificate issuance before attempting strict origin TLS. Switching apex DNS records from proxied to DNS-only may be part of certificate recovery, but **do not do this automatically**: it can bypass Cloudflare security and cause an outage while the GitHub certificate is unavailable.
+3. After the GitHub Pages certificate is approved, enable GitHub Pages HTTPS enforcement if supported; verify Cloudflare Full (strict), redirect behaviour and production availability. Then apply the edge header rules and expand HSTS only after all checks pass.
+
+Cloudflare's public HTTPS edge certificate passed TLS 1.3 validation in the independent audit.
 
 ## Fourth: mail and account security
 - Check the Cloudflare Email Routing rule mapping the public contact alias to the intended Google Gmail destination; test a privacy-request email using non-sensitive content.
