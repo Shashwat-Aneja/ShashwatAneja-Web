@@ -1,0 +1,31 @@
+name: Production DPDP and security audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  live-public-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit public site and DNS (read-only)
+        run: python3 scripts/audit_live_site.py
+      - name: Save audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-security-audit
+          path: production-security-audit.json
+          if-no-files-found: warn
