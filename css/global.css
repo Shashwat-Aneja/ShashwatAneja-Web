@@ -33,3 +33,5 @@ html::-webkit-scrollbar-thumb:hover {
 .footer-legal{display:flex;gap:1rem}.footer-legal a{color:inherit;text-decoration:none}.footer-legal a:hover{color:var(--text-primary)}
 @media(max-width:600px){.privacy-notice{bottom:74px;align-items:flex-start;font-size:.7rem}.footer-legal{gap:.75rem}}
 @media(prefers-reduced-motion:reduce){.site-loader,.privacy-notice{transition:none}}
+
+.privacy-notice a{color:var(--text-primary);text-decoration:underline;text-underline-offset:.2em}
