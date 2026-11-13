@@ -1119,3 +1119,21 @@ html::after{content:"";position:fixed;left:0;top:0;width:var(--reading-progress,
 .v22-reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .75s var(--ease);}
 .v22-reveal.is-visible{opacity:1;transform:none;}
 @media(prefers-reduced-motion:reduce){.v22-reveal{opacity:1;transform:none;transition:none!important}}
+
+/* Selected work: original project-specific SVG illustrations.
+   Assets are conceptual visuals rather than screenshots of running builds. */
+.selected-grid .project-art{padding:0;display:block;overflow:hidden}
+.selected-grid .project-art__image{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.015);transition:transform .8s var(--ease),filter .6s ease;filter:saturate(.9)}
+.selected-grid .selected-project:hover .project-art__image,
+.selected-grid .selected-project:focus-visible .project-art__image{transform:scale(1.065);filter:saturate(1.06)}
+.selected-grid .project-art--mnist .project-art__image{object-position:37% center}
+.selected-grid .project-art--sort .project-art__image{object-position:center}
+.selected-grid .project-art--vr .project-art__image{object-position:center}
+.selected-grid .project-art:after{z-index:1;background:linear-gradient(180deg,rgba(11,10,15,.13) 0%,rgba(11,10,15,.06) 32%,rgba(11,10,15,.60) 69%,rgba(11,10,15,.96) 100%)}
+.selected-grid .selected-project:focus-visible{outline:2px solid var(--lavender);outline-offset:-3px}
+@media (prefers-reduced-motion:reduce){.selected-grid .project-art__image{transition:none!important;transform:none!important}}
+
+/* Transparency note for the five project concept illustrations. */
+.selected-visual-notice{margin:12px 0 0;padding:12px 2px 0;color:var(--text-muted);font:12px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.selected-visual-notice a{color:var(--lavender);text-decoration:underline;text-underline-offset:3px}
+.selected-visual-notice a:focus-visible{outline:2px solid var(--lavender);outline-offset:3px}
