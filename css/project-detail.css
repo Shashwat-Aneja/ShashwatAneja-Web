@@ -15,3 +15,14 @@
 .detail-action:focus-visible,.detail-nav__back:focus-visible,.detail-footer a:focus-visible,.detail-navitem:focus-visible{outline:2px solid var(--lavender);outline-offset:5px}
 @media(max-width:800px){.detail-navlist{margin-top:60px}.detail-navitem{padding:22px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.detail-action,.detail-navitem{transition:none}}
+
+/* Clearly labelled concept illustrations for the project detail pages. */
+.detail-project-figure{margin:0}
+.detail-visual--illustration{min-height:0;aspect-ratio:1200 / 760;background:#14131B}
+.detail-visual--illustration::before{display:none}
+.detail-visual--illustration img{display:block;width:100%;height:100%;object-fit:cover}
+.detail-visual--illustration .visual-label{top:16px;left:16px;padding:9px 12px;color:var(--text-primary);background:rgba(11,10,15,.82);border:1px solid var(--line-strong)}
+.detail-project-figure__caption{padding:14px 0 0;color:var(--text-secondary);font:12px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.detail-project-figure__caption a{color:var(--lavender);text-underline-offset:3px}
+.detail-project-figure__caption a:hover,.detail-project-figure__caption a:focus-visible{color:var(--text-primary)}
+@media(max-width:520px){.detail-visual--illustration .visual-label{top:10px;left:10px;font-size:9px;padding:7px 8px}.detail-project-figure__caption{font-size:12px}}
