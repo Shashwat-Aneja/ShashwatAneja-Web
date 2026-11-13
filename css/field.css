@@ -1132,3 +1132,8 @@ html::after{content:"";position:fixed;left:0;top:0;width:var(--reading-progress,
 .selected-grid .project-art:after{z-index:1;background:linear-gradient(180deg,rgba(11,10,15,.13) 0%,rgba(11,10,15,.06) 32%,rgba(11,10,15,.60) 69%,rgba(11,10,15,.96) 100%)}
 .selected-grid .selected-project:focus-visible{outline:2px solid var(--lavender);outline-offset:-3px}
 @media (prefers-reduced-motion:reduce){.selected-grid .project-art__image{transition:none!important;transform:none!important}}
+
+/* Transparency note for the five project concept illustrations. */
+.selected-visual-notice{margin:12px 0 0;padding:12px 2px 0;color:var(--text-muted);font:12px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.selected-visual-notice a{color:var(--lavender);text-decoration:underline;text-underline-offset:3px}
+.selected-visual-notice a:focus-visible{outline:2px solid var(--lavender);outline-offset:3px}
